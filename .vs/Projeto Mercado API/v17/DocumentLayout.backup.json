@@ -1,12 +1,70 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\controllers\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:controllers\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\projeto mercado api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:projeto mercado api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Produto.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Controllers\\Produto.cs",
+              "RelativeDocumentMoniker": "Controllers\\Produto.cs",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Controllers\\Produto.cs",
+              "RelativeToolTip": "Controllers\\Produto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T16:47:52.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Projeto Mercado API.http",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Projeto Mercado API.http",
+              "RelativeDocumentMoniker": "Projeto Mercado API.http",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Projeto Mercado API.http",
+              "RelativeToolTip": "Projeto Mercado API.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-10-01T01:51:47.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T20:10:07.937Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
