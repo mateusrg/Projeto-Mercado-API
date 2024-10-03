@@ -22,9 +22,9 @@ namespace Projeto_Mercado_API.Repositories
             return null;
         }
 
-        public static Produto? ConsultarPorCodBarras(int codBarras)
+        public static Produto? ConsultarPorCodBarras(string codBarras)
         {
-            var resultado = Select($"SELECT * FROM Produtos WHERE CodBarras = {codBarras}");
+            var resultado = Select($"SELECT * FROM Produtos WHERE CodBarras = '{codBarras}'");
             if (resultado.Read())
             {
                 var produto = new Produto()
@@ -43,7 +43,7 @@ namespace Projeto_Mercado_API.Repositories
         public static List<Produto> ConsultarPorDescricao(string descricao)
         {
             List<Produto> produtos = new List<Produto>();
-            var resultado = Select($"SELECT * FROM Produtos WHERE Descricao LIKE %{descricao}%");
+            var resultado = Select($"SELECT * FROM Produtos WHERE Descricao LIKE '%{descricao}%'");
             while (resultado.Read())
             {
                 var produto = new Produto()
@@ -60,14 +60,14 @@ namespace Projeto_Mercado_API.Repositories
 
         public static int ExcluirPorId (int idProduto)
         {
-            return Update($"DELETE FROM Produtos WHERE idProduto = {idProduto}");
+            return Update($"DELETE FROM Produtos WHERE IdProduto = {idProduto}");
         }
 
         public static int Cadastrar (Produto novoProduto)
         {
             var resultado = Update($@"
                 INSERT INTO Produtos (CodBarras, Descricao) VALUES
-                ({novoProduto.CodBarras}, {novoProduto.Descricao})
+                ('{novoProduto.CodBarras}', '{novoProduto.Descricao}')
                 ");
             return resultado;
         }
@@ -76,8 +76,8 @@ namespace Projeto_Mercado_API.Repositories
         {
             var resultado = Update($@"
                 UPDATE Produtos SET
-                CodBarras = {produtoAlterar.CodBarras},
-                Descricao = {produtoAlterar.Descricao},
+                CodBarras = '{produtoAlterar.CodBarras}',
+                Descricao = '{produtoAlterar.Descricao}',
                 WHERE IdProduto = {produtoAlterar.IdProduto}
                 ");
             return resultado;

@@ -1,0 +1,134 @@
+﻿using Projeto_Mercado_API.Models;
+
+namespace Projeto_Mercado_API.Repositories
+{
+    public class ComprasRepository : RepositoryBase
+    {
+        public static Compra? ConsultarPorId(int idCompra)
+        {
+            var resultado = Select($"SELECT * FROM Compras WHERE IdCompra = {idCompra}");
+            if (resultado.Read())
+            {
+                var compra = new Compra()
+                {
+                    IdCompra = resultado.GetInt32(0),
+                    IdFornecedor = resultado.GetInt32(1),
+                    IdProduto = resultado.GetInt32(2),
+                    Data = resultado.GetString(3),
+                    Quantidade = resultado.GetInt32(4)
+                };
+                resultado.Close();
+                return compra;
+            }
+            resultado.Close();
+            return null;
+        }
+
+        public static List<Compra> ConsultarPorIdFornecedor(int idFornecedor)
+        {
+            List<Compra> compras = new List<Compra>();
+            var resultado = Select($"SELECT * FROM Compras WHERE IdFornecedor = {idFornecedor}");
+            while (resultado.Read())
+            {
+                var compra = new Compra()
+                {
+                    IdCompra = resultado.GetInt32(0),
+                    IdFornecedor = resultado.GetInt32(1),
+                    IdProduto = resultado.GetInt32(2),
+                    Data = resultado.GetString(3),
+                    Quantidade = resultado.GetInt32(4)
+                };
+                compras.Add(compra);
+            }
+            resultado.Close();
+            return compras;
+        }
+
+        public static List<Compra> ConsultarPorIdProduto(int idProduto)
+        {
+            List<Compra> compras = new List<Compra>();
+            var resultado = Select($"SELECT * FROM Compras WHERE IdProduto = {idProduto}");
+            while (resultado.Read())
+            {
+                var compra = new Compra()
+                {
+                    IdCompra = resultado.GetInt32(0),
+                    IdFornecedor = resultado.GetInt32(1),
+                    IdProduto = resultado.GetInt32(2),
+                    Data = resultado.GetString(3),
+                    Quantidade = resultado.GetInt32(4)
+                };
+                compras.Add(compra);
+            }
+            resultado.Close();
+            return compras;
+        }
+
+        public static List<Compra> ConsultarPorData(string dataInicio, string dataFim)
+        {
+            List<Compra> compras = new List<Compra>();
+            var resultado = Select($"SELECT * FROM Compras WHERE Data >= '{dataInicio}' AND Data <= '{dataFim}'");
+            while (resultado.Read())
+            {
+                var compra = new Compra()
+                {
+                    IdCompra = resultado.GetInt32(0),
+                    IdFornecedor = resultado.GetInt32(1),
+                    IdProduto = resultado.GetInt32(2),
+                    Data = resultado.GetString(3),
+                    Quantidade = resultado.GetInt32(4)
+                };
+                compras.Add(compra);
+            }
+            resultado.Close();
+            return compras;
+        }
+
+        public static List<Compra> ConsultarPorQuantidade(int quantidade)
+        {
+            List<Compra> compras = new List<Compra>();
+            var resultado = Select($"SELECT * FROM Compras WHERE Quantidade = {quantidade}");
+            while (resultado.Read())
+            {
+                var compra = new Compra()
+                {
+                    IdCompra = resultado.GetInt32(0),
+                    IdFornecedor = resultado.GetInt32(1),
+                    IdProduto = resultado.GetInt32(2),
+                    Data = resultado.GetString(3),
+                    Quantidade = resultado.GetInt32(4)
+                };
+                compras.Add(compra);
+            }
+            resultado.Close();
+            return compras;
+        }
+
+        public static int Cadastrar(Compra novaCompra)
+        {
+            var resultado = Update($@"
+                INSERT INTO Compras (IdFornecedor, IdProduto, Data, Quantidade) VALUES
+                ({novaCompra.IdFornecedor}, {novaCompra.IdProduto}, '{novaCompra.Data}', {novaCompra.Quantidade})
+                ");
+            return resultado;
+        }
+
+        public static int Alterar(Compra compraAlterar)
+        {
+            var resultado = Update($@"
+                UPDATE Compras SET
+                IdFornecedor = {compraAlterar.IdFornecedor},
+                IdProduto = {compraAlterar.IdProduto},
+                Data = '{compraAlterar.Data}',
+                Quantidade = {compraAlterar.Quantidade},
+                WHERE IdCompra = {compraAlterar.IdCompra}
+                ");
+            return resultado;
+        }
+
+        public static int ExcluirPorId(int idCompra)
+        {
+            return Update($"DELETE FROM Compras WHERE IdCompra = {idCompra}");
+        }
+    }
+}

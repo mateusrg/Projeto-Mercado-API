@@ -1,0 +1,39 @@
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\appsettings.json
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\Projeto Mercado API.exe
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\Projeto Mercado API.deps.json
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\Projeto Mercado API.runtimeconfig.json
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\Projeto Mercado API.dll
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\Projeto Mercado API.pdb
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\Projeto Mercado API.csproj.AssemblyReference.cache
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\Projeto Mercado API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\Projeto Mercado API.AssemblyInfoInputs.cache
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\Projeto Mercado API.AssemblyInfo.cs
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\Projeto Mercado API.csproj.CoreCompileInputs.cache
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\Projeto Mercado API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\Projeto Mercado API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\Projeto Mercado API.sourcelink.json
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\staticwebassets\msbuild.Projeto Mercado API.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\staticwebassets\msbuild.build.Projeto Mercado API.props
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Projeto Mercado API.props
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Projeto Mercado API.props
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\scopedcss\bundle\Projeto Mercado API.styles.css
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\Projeto .F605D91E.Up2Date
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\Projeto Mercado API.dll
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\refint\Projeto Mercado API.dll
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\Projeto Mercado API.pdb
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\Projeto Mercado API.genruntimeconfig.cache
+C:\Users\mateu\OneDrive\Documentos\GitHub\Projeto Mercado API\obj\Debug\net8.0\ref\Projeto Mercado API.dll

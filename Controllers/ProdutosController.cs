@@ -9,7 +9,7 @@ namespace Projeto_Mercado_API.Controllers
     public class ProdutosController : ControllerBase
     {
         [HttpGet]
-        [Route("{idProduto}")]
+        [Route("id/{idProduto}")]
         public ActionResult<Produto?> ConsultarPorId(int idProduto)
         {
             var produto = ProdutosRepository.ConsultarPorId(idProduto);
@@ -19,8 +19,8 @@ namespace Projeto_Mercado_API.Controllers
         }
 
         [HttpGet]
-        [Route("{codBarras}")]
-        public ActionResult<Produto?> ConsultarPorCodBarras(int codBarras)
+        [Route("codBarras/{codBarras}")]
+        public ActionResult<Produto?> ConsultarPorCodBarras(string codBarras)
         {
             var produto = ProdutosRepository.ConsultarPorCodBarras(codBarras);
             if (produto == null)
@@ -29,7 +29,7 @@ namespace Projeto_Mercado_API.Controllers
         }
 
         [HttpGet]
-        [Route("{descricao}")]
+        [Route("descricao/{descricao}")]
         public ActionResult<List<Produto>> ConsultarPorDescricao(string descricao)
         {
             return Ok(ProdutosRepository.ConsultarPorDescricao(descricao));
