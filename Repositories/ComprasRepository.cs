@@ -4,6 +4,26 @@ namespace Projeto_Mercado_API.Repositories
 {
     public class ComprasRepository : RepositoryBase
     {
+        public static List<Compra> ListarTodos()
+        {
+            List<Compra> compras = new List<Compra>();
+            var resultado = Select($"SELECT * FROM Compras");
+            while (resultado.Read())
+            {
+                var compra = new Compra()
+                {
+                    IdCompra = resultado.GetInt32(0),
+                    IdFornecedor = resultado.GetInt32(1),
+                    IdProduto = resultado.GetInt32(2),
+                    Data = resultado.GetDateTime(3),
+                    Quantidade = resultado.GetInt32(4)
+                };
+                compras.Add(compra);
+            }
+            resultado.Close();
+            return compras;
+        }
+
         public static Compra? ConsultarPorId(int idCompra)
         {
             var resultado = Select($"SELECT * FROM Compras WHERE IdCompra = {idCompra}");

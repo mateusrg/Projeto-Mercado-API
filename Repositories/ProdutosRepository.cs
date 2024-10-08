@@ -4,6 +4,24 @@ namespace Projeto_Mercado_API.Repositories
 {
     public class ProdutosRepository : RepositoryBase
     {
+        public static List<Produto> ListarTodos()
+        {
+            List<Produto> produtos = new List<Produto>();
+            var resultado = Select($"SELECT * FROM Produtos");
+            while (resultado.Read())
+            {
+                var produto = new Produto()
+                {
+                    IdProduto = resultado.GetInt32(0),
+                    CodBarras = resultado.GetString(1),
+                    Descricao = resultado.GetString(2)
+                };
+                produtos.Add(produto);
+            }
+            resultado.Close();
+            return produtos;
+        }
+
         public static Produto? ConsultarPorId(int idProduto)
         {
             var resultado = Select($"SELECT * FROM Produtos WHERE IdProduto = {idProduto}");

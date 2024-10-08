@@ -7,6 +7,12 @@ namespace Projeto_Mercado_API.Controllers
     public class TiposEstoqueController : ControllerBase
     {
         [HttpGet]
+        public ActionResult<List<TipoEstoque>> ListarTodos()
+        {
+            return Ok(TiposEstoqueRepository.ListarTodos());
+        }
+
+        [HttpGet]
         [Route("id/{idTipoEstoque}")]
         public ActionResult<TipoEstoque?> ConsultarPorId(int idTipoEstoque)
         {

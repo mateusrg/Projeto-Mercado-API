@@ -4,6 +4,24 @@ namespace Projeto_Mercado_API.Repositories
 {
     public class FornecedoresRepository : RepositoryBase
     {
+        public static List<Fornecedor> ListarTodos()
+        {
+            List<Fornecedor> fornecedores = new List<Fornecedor>();
+            var resultado = Select($"SELECT * FROM Fornecedores");
+            while (resultado.Read())
+            {
+                var fornecedor = new Fornecedor()
+                {
+                    IdFornecedor = resultado.GetInt32(0),
+                    CNPJ = resultado.GetString(1),
+                    Nome = resultado.GetString(2)
+                };
+                fornecedores.Add(fornecedor);
+            }
+            resultado.Close();
+            return fornecedores;
+        }
+
         public static Fornecedor? ConsultarPorId(int idFornecedor)
         {
             var resultado = Select($"SELECT * FROM Fornecedores WHERE IdFornecedor = {idFornecedor}");

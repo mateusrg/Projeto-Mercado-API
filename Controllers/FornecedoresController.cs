@@ -9,6 +9,12 @@ namespace Projeto_Mercado_API.Controllers
     public class FornecedoresController : ControllerBase
     {
         [HttpGet]
+        public ActionResult<List<Fornecedor>> ListarTodos()
+        {
+            return Ok(FornecedoresRepository.ListarTodos());
+        }
+
+        [HttpGet]
         [Route("id/{idFornecedor}")]
         public ActionResult<Fornecedor?> ConsultarPorId(int idFornecedor)
         {

@@ -4,6 +4,24 @@ namespace Projeto_Mercado_API.Repositories
 {
     public class EstoquesRepository : RepositoryBase
     {
+        public static List<Estoque> ListarTodos()
+        {
+            List<Estoque> estoques = new List<Estoque>();
+            var resultado = Select($"SELECT * FROM Estoques");
+            while (resultado.Read())
+            {
+                var estoque = new Estoque()
+                {
+                    IdEstoque = resultado.GetInt32(0),
+                    IdTipoEstoque = resultado.GetInt32(1),
+                    Descricao = resultado.GetString(2)
+                };
+                estoques.Add(estoque);
+            }
+            resultado.Close();
+            return estoques;
+        }
+
         public static Estoque? ConsultarPorId(int idEstoque)
         {
             var resultado = Select($"SELECT * FROM Estoques WHERE IdEstoque = {idEstoque}");

@@ -4,6 +4,29 @@ namespace Projeto_Mercado_API.Repositories
 {
     public class MovimentacoesEstoqueRepository : RepositoryBase
     {
+        public static List<MovimentacaoEstoque> ListarTodos()
+        {
+            List<MovimentacaoEstoque> movimentacoesEstoque = new List<MovimentacaoEstoque>();
+            var resultado = Select($"SELECT * FROM MovimentacoesEstoque");
+            while (resultado.Read())
+            {
+                var movimentacaoEstoque = new MovimentacaoEstoque()
+                {
+                    IdMovimentacaoEstoque = resultado.GetInt32(0),
+                    IdEstoque = resultado.GetInt32(1),
+                    IdTipoMovimentacaoEstoque = resultado.GetInt32(2),
+                    IdFuncionarioSolicitador = resultado.GetInt32(3),
+                    IdFuncionarioAutenticador = resultado.GetInt32(4),
+                    IdProduto = resultado.GetInt32(5),
+                    Quantidade = resultado.GetInt32(6),
+                    DataHora = resultado.GetDateTime(7)
+                };
+                movimentacoesEstoque.Add(movimentacaoEstoque);
+            }
+            resultado.Close();
+            return movimentacoesEstoque;
+        }
+
         public static MovimentacaoEstoque? ConsultarPorId(int idMovimentacaoEstoque)
         {
             var resultado = Select($"SELECT * FROM MovimentacoesEstoque WHERE IdMovimentacaoEstoque = {idMovimentacaoEstoque}");
