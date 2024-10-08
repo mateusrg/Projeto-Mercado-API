@@ -10,7 +10,7 @@
 
         public Funcionario()
         {
-            idFuncionario = 0;
+            IdFuncionario = 0;
             Nome = "";
             Setor = "";
             Email = "";

@@ -14,7 +14,7 @@ namespace Projeto_Mercado_API.Repositories
                     IdCompra = resultado.GetInt32(0),
                     IdFornecedor = resultado.GetInt32(1),
                     IdProduto = resultado.GetInt32(2),
-                    Data = resultado.GetString(3),
+                    Data = resultado.GetDateTime(3),
                     Quantidade = resultado.GetInt32(4)
                 };
                 resultado.Close();
@@ -35,7 +35,7 @@ namespace Projeto_Mercado_API.Repositories
                     IdCompra = resultado.GetInt32(0),
                     IdFornecedor = resultado.GetInt32(1),
                     IdProduto = resultado.GetInt32(2),
-                    Data = resultado.GetString(3),
+                    Data = resultado.GetDateTime(3),
                     Quantidade = resultado.GetInt32(4)
                 };
                 compras.Add(compra);
@@ -55,7 +55,7 @@ namespace Projeto_Mercado_API.Repositories
                     IdCompra = resultado.GetInt32(0),
                     IdFornecedor = resultado.GetInt32(1),
                     IdProduto = resultado.GetInt32(2),
-                    Data = resultado.GetString(3),
+                    Data = resultado.GetDateTime(3),
                     Quantidade = resultado.GetInt32(4)
                 };
                 compras.Add(compra);
@@ -75,7 +75,7 @@ namespace Projeto_Mercado_API.Repositories
                     IdCompra = resultado.GetInt32(0),
                     IdFornecedor = resultado.GetInt32(1),
                     IdProduto = resultado.GetInt32(2),
-                    Data = resultado.GetString(3),
+                    Data = resultado.GetDateTime(3),
                     Quantidade = resultado.GetInt32(4)
                 };
                 compras.Add(compra);
@@ -95,7 +95,7 @@ namespace Projeto_Mercado_API.Repositories
                     IdCompra = resultado.GetInt32(0),
                     IdFornecedor = resultado.GetInt32(1),
                     IdProduto = resultado.GetInt32(2),
-                    Data = resultado.GetString(3),
+                    Data = resultado.GetDateTime(3),
                     Quantidade = resultado.GetInt32(4)
                 };
                 compras.Add(compra);

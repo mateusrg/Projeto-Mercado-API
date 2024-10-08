@@ -1,5 +1,4 @@
 ﻿using System.Data.SqlClient;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Projeto_Mercado_API.Repositories
 

@@ -88,8 +88,8 @@ namespace Projeto_Mercado_API.Repositories
         {
             var resultado = Update($@"
                 INSERT INTO Funcionarios (IdFuncionario, Nome, Setor, Email, Senha) VALUES
-                ({novoFuncionario.IdFuncionario}, {novoFuncionario.Nome}, '{novoFuncionario.Setor}',
-                {novoFuncionario.Email}, {novoFuncionario.Senha})
+                ({novoFuncionario.IdFuncionario}, '{novoFuncionario.Nome}', '{novoFuncionario.Setor}',
+                '{novoFuncionario.Email}', '{novoFuncionario.Senha}')
                 ");
             return resultado;
         }
@@ -98,7 +98,7 @@ namespace Projeto_Mercado_API.Repositories
         {
             var resultado = Update($@"
                 UPDATE Funcionarios SET
-                Nome = {funcionarioAlterar.Nome},
+                Nome = '{funcionarioAlterar.Nome}',
                 Setor = '{funcionarioAlterar.Setor}',
                 Email = {funcionarioAlterar.Email},
                 Senha = {funcionarioAlterar.Senha},
