@@ -24,7 +24,7 @@ namespace Projeto_Mercado_API.Controllers
 
         [HttpGet]
         [Route("estoque/{idEstoque}")]
-        public ActionResult<MovimentacaoEstoque?> ConsultarPorEstoque(int idEstoque)
+        public ActionResult<List<MovimentacaoEstoque>> ConsultarPorEstoque(int idEstoque)
         {
             var movimentacaoEstoque = MovimentacoesEstoqueRepository.ConsultarPorEstoque(idEstoque);
             if (movimentacaoEstoque == null)
@@ -34,7 +34,7 @@ namespace Projeto_Mercado_API.Controllers
 
         [HttpGet]
         [Route("tipoMovimentacaoEstoque/{idTipoMovimentacaoEstoque}")]
-        public ActionResult<MovimentacaoEstoque?> ConsultarPorTipoMovimentacaoEstoque(int idTipoMovimentacaoEstoque)
+        public ActionResult<List<MovimentacaoEstoque>> ConsultarPorTipoMovimentacaoEstoque(int idTipoMovimentacaoEstoque)
         {
             var movimentacaoEstoque = MovimentacoesEstoqueRepository.ConsultarPorTipoMovimentacaoEstoque(idTipoMovimentacaoEstoque);
             if (movimentacaoEstoque == null)
@@ -44,7 +44,7 @@ namespace Projeto_Mercado_API.Controllers
 
         [HttpGet]
         [Route("funcionarioSolicitador/{idFuncionarioSolicitador}")]
-        public ActionResult<MovimentacaoEstoque?> ConsultarPorFuncionarioSolicitador(int idFuncionarioSolicitador)
+        public ActionResult<List<MovimentacaoEstoque>> ConsultarPorFuncionarioSolicitador(int idFuncionarioSolicitador)
         {
             var movimentacaoEstoque = MovimentacoesEstoqueRepository.ConsultarPorFuncionarioSolicitador(idFuncionarioSolicitador);
             if (movimentacaoEstoque == null)
@@ -54,7 +54,7 @@ namespace Projeto_Mercado_API.Controllers
 
         [HttpGet]
         [Route("funcionarioAutenticador/{idFuncionarioAutenticador}")]
-        public ActionResult<MovimentacaoEstoque?> ConsultarPorFuncionarioAutenticador(int idFuncionarioAutenticador)
+        public ActionResult<List<MovimentacaoEstoque>> ConsultarPorFuncionarioAutenticador(int idFuncionarioAutenticador)
         {
             var movimentacaoEstoque = MovimentacoesEstoqueRepository.ConsultarPorFuncionarioAutenticador(idFuncionarioAutenticador);
             if (movimentacaoEstoque == null)
@@ -64,7 +64,7 @@ namespace Projeto_Mercado_API.Controllers
 
         [HttpGet]
         [Route("produto/{idProduto}")]
-        public ActionResult<MovimentacaoEstoque?> ConsultarPorProduto(int idProduto)
+        public ActionResult<List<MovimentacaoEstoque>> ConsultarPorProduto(int idProduto)
         {
             var movimentacaoEstoque = MovimentacoesEstoqueRepository.ConsultarPorProduto(idProduto);
             if (movimentacaoEstoque == null)
