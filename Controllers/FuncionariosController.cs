@@ -40,7 +40,7 @@ namespace Projeto_Mercado_API.Controllers
 
         [HttpGet]
         [Route("email/{email}")]
-        public ActionResult<List<Funcionario>> ConsultarPorEmail(string email)
+        public ActionResult<Funcionario> ConsultarPorEmail(string email)
         {
             return Ok(FuncionariosRepository.ConsultarPorEmail(email));
         }

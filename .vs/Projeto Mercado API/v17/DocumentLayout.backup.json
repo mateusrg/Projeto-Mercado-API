@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\controllers\\tiposestoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:controllers\\tiposestoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\controllers\\comprascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:controllers\\comprascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\controllers\\tiposmovimentacaoestoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:controllers\\tiposmovimentacaoestoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TiposEstoqueController.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Controllers\\TiposEstoqueController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TiposEstoqueController.cs",
-              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Controllers\\TiposEstoqueController.cs",
-              "RelativeToolTip": "Controllers\\TiposEstoqueController.cs",
+              "Title": "ComprasController.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Controllers\\ComprasController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ComprasController.cs",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Controllers\\ComprasController.cs",
+              "RelativeToolTip": "Controllers\\ComprasController.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T17:32:01.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TiposMovimentacaoEstoqueController.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Controllers\\TiposMovimentacaoEstoqueController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TiposMovimentacaoEstoqueController.cs",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Controllers\\TiposMovimentacaoEstoqueController.cs",
+              "RelativeToolTip": "Controllers\\TiposMovimentacaoEstoqueController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T23:23:47.364Z",
+              "WhenOpened": "2024-10-10T17:29:11.425Z",
               "EditorCaption": ""
             }
           ]
