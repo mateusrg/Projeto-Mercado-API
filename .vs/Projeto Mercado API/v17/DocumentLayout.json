@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\controllers\\funcionarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:controllers\\funcionarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\repositories\\funcionariosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:repositories\\funcionariosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\controllers\\tiposmovimentacaoestoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:controllers\\tiposmovimentacaoestoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FuncionariosRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Repositories\\FuncionariosRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\FuncionariosRepository.cs",
-              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Repositories\\FuncionariosRepository.cs",
-              "RelativeToolTip": "Repositories\\FuncionariosRepository.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T18:07:24.263Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FuncionariosController.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Controllers\\FuncionariosController.cs",
-              "RelativeDocumentMoniker": "Controllers\\FuncionariosController.cs",
-              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Controllers\\FuncionariosController.cs",
-              "RelativeToolTip": "Controllers\\FuncionariosController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwC8AAAASAAAAAAAAAA==",
+              "Title": "TiposMovimentacaoEstoqueController.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Controllers\\TiposMovimentacaoEstoqueController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TiposMovimentacaoEstoqueController.cs",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Controllers\\TiposMovimentacaoEstoqueController.cs",
+              "RelativeToolTip": "Controllers\\TiposMovimentacaoEstoqueController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T18:04:19.304Z",
+              "WhenOpened": "2024-10-10T19:05:00.242Z",
               "EditorCaption": ""
             }
           ]
