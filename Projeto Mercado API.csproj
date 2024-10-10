@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\TiposMovimentacaoEstoque.cs" />
     <Compile Remove="Repositories\Fornecedor.cs" />
   </ItemGroup>
 

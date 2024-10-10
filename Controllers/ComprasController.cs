@@ -28,28 +28,27 @@ namespace Projeto_Mercado_API.Controllers
         [Route("idFornecedor/{idFornecedor}")]
         public ActionResult<List<Compra>> ConsultarPorIdFornecedor(int idFornecedor)
         {
-            return Ok(ComprasRepository.ConsultarPorIdFornecedor(idFornecedor));
+            var compra = ComprasRepository.ConsultarPorIdFornecedor(idFornecedor);
+            if (compra == null)
+                return BadRequest("Compra não encontrada.");
+            return Ok(compra);
         }
 
         [HttpGet]
         [Route("idProduto/{idProduto}")]
         public ActionResult<List<Compra>> ConsultarPorIdProduto(int idProduto)
         {
-            return Ok(ComprasRepository.ConsultarPorIdProduto(idProduto));
+            var compra = ComprasRepository.ConsultarPorIdFornecedor(idProduto);
+            if (compra == null)
+                return BadRequest("Compra não encontrada.");
+            return Ok(compra);
         }
 
         [HttpGet]
-        [Route("data/{data}")]
+        [Route("data/{dataInicio}/{dataFim}")]
         public ActionResult<List<Compra>> ConsultarPorData(string dataInicio, string dataFim)
         {
             return Ok(ComprasRepository.ConsultarPorData(dataInicio, dataFim));
-        }
-
-        [HttpGet]
-        [Route("quantidade/{quantidade}")]
-        public ActionResult<List<Compra>> ConsultarPorQuantidade(int quantidade)
-        {
-            return Ok(ComprasRepository.ConsultarPorQuantidade(quantidade));
         }
 
         [HttpPost]

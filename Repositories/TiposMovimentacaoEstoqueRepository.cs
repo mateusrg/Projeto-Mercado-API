@@ -2,74 +2,77 @@
 
 namespace Projeto_Mercado_API.Repositories
 {
-    public static List<TipoMovimentacaoEstoque> ListarTodos()
+    public class TiposMovimentacaoEstoqueRepository : RepositoryBase
     {
-        List<TipoMovimentacaoEstoque> tiposMovimentacaoEstoque = new List<TipoMovimentacaoEstoque>();
-        var resultado = Select($"SELECT * FROM Compras");
-        while (resultado.Read())
+        public static List<TipoMovimentacaoEstoque> ListarTodos()
         {
-            var tipoMovimentacaoEstoque = new TipoMovimentacaoEstoque()
+            List<TipoMovimentacaoEstoque> tiposMovimentacaoEstoque = new List<TipoMovimentacaoEstoque>();
+            var resultado = Select($"SELECT * FROM Compras");
+            while (resultado.Read())
             {
-                IdTipoMovimentacaoEstoque = resultado.GetInt32(0),
-                Descricao = resultado.GetString(1)
-            };
-            tiposMovimentacaoEstoque.Add(tipoMovimentacaoEstoque);
-        }
-        resultado.Close();
-        return tiposMovimentacaoEstoque;
-    }
-
-    public static TipoMovimentacaoEstoque? ConsultarPorId(int idTipoMovimentaoEstoque)
-    {
-        var resultado = Select($"SELECT * FROM TiposMovimentacaoEstoque WHERE IdTipoMovimentacaoEstoque = {idTipoMovimentaoEstoque}");
-        if (resultado.Read())
-        {
-            var tipoMovimentacaoEstoque = new TipoMovimentacaoEstoque()
-            {
-                IdTipoMovimentacaoEstoque = resultado.GetInt32(0),
-                Descricao = resultado.GetString(1)
-            };
+                var tipoMovimentacaoEstoque = new TipoMovimentacaoEstoque()
+                {
+                    IdTipoMovimentacaoEstoque = resultado.GetInt32(0),
+                    Descricao = resultado.GetString(1)
+                };
+                tiposMovimentacaoEstoque.Add(tipoMovimentacaoEstoque);
+            }
             resultado.Close();
-            return tipoMovimentacaoEstoque;
+            return tiposMovimentacaoEstoque;
         }
-        resultado.Close();
-        return null;
-    }
 
-    public static List<TipoMovimentacaoEstoque> ConsultarPorDescricao(string descricao)
-    {
-        List<TipoMovimentacaoEstoque> tiposMovimentacaoEstoque = new List<TipoMovimentacaoEstoque>();
-        var resultado = Select($"SELECT * FROM TiposMovimentacaoEstoque WHERE Descricao LIKE '%{descricao}%'");
-        while (resultado.Read())
+        public static TipoMovimentacaoEstoque? ConsultarPorId(int idTipoMovimentaoEstoque)
         {
-            var tipoMovimentacaoEstoque = new TipoMovimentacaoEstoque()
+            var resultado = Select($"SELECT * FROM TiposMovimentacaoEstoque WHERE IdTipoMovimentacaoEstoque = {idTipoMovimentaoEstoque}");
+            if (resultado.Read())
             {
-                IdTipoMovimentacaoEstoque = resultado.GetInt32(0),
-                Descricao = resultado.GetString(1)
-            };
-            tiposMovimentacaoEstoque.Add(tipoMovimentacaoEstoque);
+                var tipoMovimentacaoEstoque = new TipoMovimentacaoEstoque()
+                {
+                    IdTipoMovimentacaoEstoque = resultado.GetInt32(0),
+                    Descricao = resultado.GetString(1)
+                };
+                resultado.Close();
+                return tipoMovimentacaoEstoque;
+            }
+            resultado.Close();
+            return null;
         }
-        resultado.Close();
-        return tiposMovimentacaoEstoque;
-    }
 
-    public static int Cadastrar(TipoMovimentacaoEstoque novoTipoMovimentacaoEstoque)
-    {
-        return Update($"INSERT INTO TiposMovimentacaoEstoque (Descricao) ('{novoTipoMovimentacaoEstoque.Descricao}')");
-    }
+        public static List<TipoMovimentacaoEstoque> ConsultarPorDescricao(string descricao)
+        {
+            List<TipoMovimentacaoEstoque> tiposMovimentacaoEstoque = new List<TipoMovimentacaoEstoque>();
+            var resultado = Select($"SELECT * FROM TiposMovimentacaoEstoque WHERE Descricao LIKE '%{descricao}%'");
+            while (resultado.Read())
+            {
+                var tipoMovimentacaoEstoque = new TipoMovimentacaoEstoque()
+                {
+                    IdTipoMovimentacaoEstoque = resultado.GetInt32(0),
+                    Descricao = resultado.GetString(1)
+                };
+                tiposMovimentacaoEstoque.Add(tipoMovimentacaoEstoque);
+            }
+            resultado.Close();
+            return tiposMovimentacaoEstoque;
+        }
 
-    public static int Alterar(TipoMovimentacaoEstoque tipoMovimentacaoEstoqueAlterar)
-    {
-        var resultado = Update($@"
+        public static int Cadastrar(TipoMovimentacaoEstoque novoTipoMovimentacaoEstoque)
+        {
+            return Update($"INSERT INTO TiposMovimentacaoEstoque (Descricao) ('{novoTipoMovimentacaoEstoque.Descricao}')");
+        }
+
+        public static int Alterar(TipoMovimentacaoEstoque tipoMovimentacaoEstoqueAlterar)
+        {
+            var resultado = Update($@"
                 UPDATE TiposMovimentacaoEstoque SET
                 Descricao = '{tipoMovimentacaoEstoqueAlterar.Descricao}'
                 WHERE IdTipoMovimentacaoEstoque = {tipoMovimentacaoEstoqueAlterar.IdTipoMovimentacaoEstoque}
                 ");
-        return resultado;
-    }
+            return resultado;
+        }
 
-    public static int ExcluirPorId(int idTipoMovimentacaoEstoque)
-    {
-        return Update($"DELETE FROM TiposMovimentacaoEstoque WHERE IdTipoMovimentacaoEstoque = {idTipoMovimentacaoEstoque}");
+        public static int ExcluirPorId(int idTipoMovimentacaoEstoque)
+        {
+            return Update($"DELETE FROM TiposMovimentacaoEstoque WHERE IdTipoMovimentacaoEstoque = {idTipoMovimentacaoEstoque}");
+        }
     }
 }

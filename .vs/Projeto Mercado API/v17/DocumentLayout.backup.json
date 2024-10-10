@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\models\\compra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:models\\compra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\controllers\\tiposestoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:controllers\\tiposestoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Compra.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Models\\Compra.cs",
-              "RelativeDocumentMoniker": "Models\\Compra.cs",
-              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Models\\Compra.cs",
-              "RelativeToolTip": "Models\\Compra.cs",
+              "Title": "TiposEstoqueController.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Controllers\\TiposEstoqueController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TiposEstoqueController.cs",
+              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Controllers\\TiposEstoqueController.cs",
+              "RelativeToolTip": "Controllers\\TiposEstoqueController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T19:52:17.843Z",
+              "WhenOpened": "2024-10-09T23:23:47.364Z",
               "EditorCaption": ""
             }
           ]

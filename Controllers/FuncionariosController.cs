@@ -16,7 +16,7 @@ namespace Projeto_Mercado_API.Controllers
 
         [HttpGet]
         [Route("id/{idFuncionario}")]
-        public ActionResult<Compra?> ConsultarPorId(int idFuncionario)
+        public ActionResult<Funcionario?> ConsultarPorId(int idFuncionario)
         {
             var funcionario = FuncionariosRepository.ConsultarPorId(idFuncionario);
             if (funcionario == null)

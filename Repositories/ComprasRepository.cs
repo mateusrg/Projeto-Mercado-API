@@ -104,26 +104,6 @@ namespace Projeto_Mercado_API.Repositories
             return compras;
         }
 
-        public static List<Compra> ConsultarPorQuantidade(int quantidade)
-        {
-            List<Compra> compras = new List<Compra>();
-            var resultado = Select($"SELECT * FROM Compras WHERE Quantidade = {quantidade}");
-            while (resultado.Read())
-            {
-                var compra = new Compra()
-                {
-                    IdCompra = resultado.GetInt32(0),
-                    IdFornecedor = resultado.GetInt32(1),
-                    IdProduto = resultado.GetInt32(2),
-                    Data = resultado.GetDateTime(3),
-                    Quantidade = resultado.GetInt32(4)
-                };
-                compras.Add(compra);
-            }
-            resultado.Close();
-            return compras;
-        }
-
         public static int Cadastrar(Compra novaCompra)
         {
             var resultado = Update($@"
