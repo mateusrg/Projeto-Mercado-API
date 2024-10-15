@@ -1,9 +1,34 @@
 ﻿using Projeto_Mercado_API.Models;
+using Projeto_Mercado_API.Models.View_Models;
 
 namespace Projeto_Mercado_API.Repositories
 {
     public class ComprasRepository : RepositoryBase
     {
+        public static List<InformacoesCompra> ListarTodosView()
+        {
+            List<InformacoesCompra> compras = new List<InformacoesCompra>();
+            var resultado = Select($@"
+                SELECT C.IdCompra, F.Nome, P.Descricao, C.Data, C.Quantidade FROM Compras C
+                JOIN Fornecedores F ON C.IdFornecedor = F.IdFornecedor
+                JOIN Produtos P ON C.IdProduto = P.IdProduto;
+                ");
+            while (resultado.Read())
+            {
+                var compra = new InformacoesCompra()
+                {
+                    IdCompra = resultado.GetInt32(0),
+                    Fornecedor = resultado.GetString(1),
+                    Produto = resultado.GetString(2),
+                    Data = resultado.GetDateTime(3).ToString("dd/MM/yyyy"),
+                    Quantidade = resultado.GetInt32(4)
+                };
+                compras.Add(compra);
+            }
+            resultado.Close();
+            return compras;
+        }
+
         public static List<Compra> ListarTodos()
         {
             List<Compra> compras = new List<Compra>();

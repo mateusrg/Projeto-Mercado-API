@@ -4,6 +4,8 @@ using Projeto_Mercado_API.Repositories;
 
 namespace Projeto_Mercado_API.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class TiposEstoqueController : ControllerBase
     {
         [HttpGet]

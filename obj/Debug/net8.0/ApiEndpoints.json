@@ -1,57 +1,5 @@
 [
   {
-    "ContainingType": "Projeto_Mercado_API.Controllers.TiposEstoqueController",
-    "Method": "ExcluirPorId",
-    "RelativePath": "{idTipoEstoque}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idTipoEstoque",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Int32",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Projeto_Mercado_API.Controllers.TiposMovimentacaoEstoqueController",
-    "Method": "ExcluirPorId",
-    "RelativePath": "{idTipoMovimentacaoEstoque}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idTipoMovimentacaoEstoque",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Int32",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "Projeto_Mercado_API.Controllers.ComprasController",
     "Method": "ListarTodos",
     "RelativePath": "Compras",
@@ -259,105 +207,16 @@
     ]
   },
   {
-    "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
-    "Method": "ConsultarPorData",
-    "RelativePath": "data/{dataInicio}/{dataFim}",
+    "ContainingType": "Projeto_Mercado_API.Controllers.ComprasController",
+    "Method": "ListarTodosView",
+    "RelativePath": "Compras/informacoes",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dataInicio",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "dataFim",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.MovimentacaoEstoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Projeto_Mercado_API.Controllers.TiposEstoqueController",
-    "Method": "ConsultarPorDescricao",
-    "RelativePath": "descricao/{descricao}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "descricao",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.TipoEstoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Projeto_Mercado_API.Controllers.TiposMovimentacaoEstoqueController",
-    "Method": "ConsultarPorDescricao",
-    "RelativePath": "descricao/{descricao}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "descricao",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.TipoMovimentacaoEstoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
-    "Method": "ConsultarPorEstoque",
-    "RelativePath": "estoque/{idEstoque}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idEstoque",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Projeto_Mercado_API.Models.MovimentacaoEstoque",
+        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.Compra, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -720,32 +579,6 @@
     ]
   },
   {
-    "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
-    "Method": "ConsultarPorFuncionarioAutenticador",
-    "RelativePath": "funcionarioAutenticador/{idFuncionarioAutenticador}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idFuncionarioAutenticador",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Projeto_Mercado_API.Models.MovimentacaoEstoque",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "Projeto_Mercado_API.Controllers.FuncionariosController",
     "Method": "ListarTodos",
     "RelativePath": "Funcionarios",
@@ -859,7 +692,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.Funcionario, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Projeto_Mercado_API.Models.Funcionario",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -949,8 +782,189 @@
   },
   {
     "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
+    "Method": "ListarTodos",
+    "RelativePath": "MovimentacoesEstoque",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.MovimentacaoEstoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
+    "Method": "Cadastrar",
+    "RelativePath": "MovimentacoesEstoque",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novaMovimentacaoEstoque",
+        "Type": "Projeto_Mercado_API.Models.MovimentacaoEstoque",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
+    "Method": "Alterar",
+    "RelativePath": "MovimentacoesEstoque",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "movimentacaoEstoqueAlterar",
+        "Type": "Projeto_Mercado_API.Models.MovimentacaoEstoque",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
+    "Method": "ExcluirPorId",
+    "RelativePath": "MovimentacoesEstoque/{idMovimentacaoEstoque}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idMovimentacaoEstoque",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
+    "Method": "ConsultarPorData",
+    "RelativePath": "MovimentacoesEstoque/data/{dataInicio}/{dataFim}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dataInicio",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dataFim",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.MovimentacaoEstoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
+    "Method": "ConsultarPorEstoque",
+    "RelativePath": "MovimentacoesEstoque/estoque/{idEstoque}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idEstoque",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.MovimentacaoEstoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
+    "Method": "ConsultarPorFuncionarioAutenticador",
+    "RelativePath": "MovimentacoesEstoque/funcionarioAutenticador/{idFuncionarioAutenticador}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idFuncionarioAutenticador",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.MovimentacaoEstoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
     "Method": "ConsultarPorFuncionarioSolicitador",
-    "RelativePath": "funcionarioSolicitador/{idFuncionarioSolicitador}",
+    "RelativePath": "MovimentacoesEstoque/funcionarioSolicitador/{idFuncionarioSolicitador}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -963,7 +977,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Projeto_Mercado_API.Models.MovimentacaoEstoque",
+        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.MovimentacaoEstoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -976,7 +990,7 @@
   {
     "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
     "Method": "ConsultarPorId",
-    "RelativePath": "id/{idMovimentacaoEstoque}",
+    "RelativePath": "MovimentacoesEstoque/id/{idMovimentacaoEstoque}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -1000,61 +1014,9 @@
     ]
   },
   {
-    "ContainingType": "Projeto_Mercado_API.Controllers.TiposEstoqueController",
-    "Method": "ConsultarPorId",
-    "RelativePath": "id/{idTipoEstoque}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idTipoEstoque",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Projeto_Mercado_API.Models.TipoEstoque",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Projeto_Mercado_API.Controllers.TiposMovimentacaoEstoqueController",
-    "Method": "ConsultarPorId",
-    "RelativePath": "id/{idTipoMovimentacaoEstoque}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idTipoMovimentacaoEstoque",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Projeto_Mercado_API.Models.TipoMovimentacaoEstoque",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
     "Method": "ConsultarPorProduto",
-    "RelativePath": "produto/{idProduto}",
+    "RelativePath": "MovimentacoesEstoque/produto/{idProduto}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -1067,7 +1029,33 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Projeto_Mercado_API.Models.MovimentacaoEstoque",
+        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.MovimentacaoEstoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
+    "Method": "ConsultarPorTipoMovimentacaoEstoque",
+    "RelativePath": "MovimentacoesEstoque/tipoMovimentacaoEstoque/{idTipoMovimentacaoEstoque}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idTipoMovimentacaoEstoque",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.MovimentacaoEstoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1254,9 +1242,283 @@
     ]
   },
   {
-    "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
-    "Method": "ConsultarPorTipoMovimentacaoEstoque",
-    "RelativePath": "tipoMovimentacaoEstoque/{idTipoMovimentacaoEstoque}",
+    "ContainingType": "Projeto_Mercado_API.Controllers.TiposEstoqueController",
+    "Method": "ListarTodos",
+    "RelativePath": "TiposEstoque",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.TipoEstoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.TiposEstoqueController",
+    "Method": "Cadastrar",
+    "RelativePath": "TiposEstoque",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novoTipoEstoque",
+        "Type": "Projeto_Mercado_API.Models.TipoEstoque",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.TiposEstoqueController",
+    "Method": "Alterar",
+    "RelativePath": "TiposEstoque",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tipoEstoqueAlterar",
+        "Type": "Projeto_Mercado_API.Models.TipoEstoque",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.TiposEstoqueController",
+    "Method": "ExcluirPorId",
+    "RelativePath": "TiposEstoque/{idTipoEstoque}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idTipoEstoque",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.TiposEstoqueController",
+    "Method": "ConsultarPorDescricao",
+    "RelativePath": "TiposEstoque/descricao/{descricao}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "descricao",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.TipoEstoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.TiposEstoqueController",
+    "Method": "ConsultarPorId",
+    "RelativePath": "TiposEstoque/id/{idTipoEstoque}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idTipoEstoque",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Projeto_Mercado_API.Models.TipoEstoque",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.TiposMovimentacaoEstoqueController",
+    "Method": "ListarTodos",
+    "RelativePath": "TiposMovimentacaoEstoque",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.TipoMovimentacaoEstoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.TiposMovimentacaoEstoqueController",
+    "Method": "Cadastrar",
+    "RelativePath": "TiposMovimentacaoEstoque",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "novoTipoMovimentacaoEstoque",
+        "Type": "Projeto_Mercado_API.Models.TipoMovimentacaoEstoque",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.TiposMovimentacaoEstoqueController",
+    "Method": "Alterar",
+    "RelativePath": "TiposMovimentacaoEstoque",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tipoMovimentacaoEstoqueAlterar",
+        "Type": "Projeto_Mercado_API.Models.TipoMovimentacaoEstoque",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.TiposMovimentacaoEstoqueController",
+    "Method": "ExcluirPorId",
+    "RelativePath": "TiposMovimentacaoEstoque/{idTipoMovimentacaoEstoque}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idTipoMovimentacaoEstoque",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.TiposMovimentacaoEstoqueController",
+    "Method": "ConsultarPorDescricao",
+    "RelativePath": "TiposMovimentacaoEstoque/descricao/{descricao}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "descricao",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.TipoMovimentacaoEstoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.TiposMovimentacaoEstoqueController",
+    "Method": "ConsultarPorId",
+    "RelativePath": "TiposMovimentacaoEstoque/id/{idTipoMovimentacaoEstoque}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -1269,7 +1531,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Projeto_Mercado_API.Models.MovimentacaoEstoque",
+        "Type": "Projeto_Mercado_API.Models.TipoMovimentacaoEstoque",
         "MediaTypes": [
           "text/plain",
           "application/json",

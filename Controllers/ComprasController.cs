@@ -9,6 +9,13 @@ namespace Projeto_Mercado_API.Controllers
     public class ComprasController : ControllerBase
     {
         [HttpGet]
+        [Route("informacoes")]
+        public ActionResult<List<Compra>> ListarTodosView()
+        {
+            return Ok(ComprasRepository.ListarTodosView());
+        }
+
+        [HttpGet]
         public ActionResult<List<Compra>> ListarTodos()
         {
             return Ok(ComprasRepository.ListarTodos());

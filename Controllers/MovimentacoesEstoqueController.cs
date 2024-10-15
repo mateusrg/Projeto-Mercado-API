@@ -4,6 +4,8 @@ using Projeto_Mercado_API.Repositories;
 
 namespace Projeto_Mercado_API.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class MovimentacoesEstoqueController : ControllerBase
     {
         [HttpGet]
@@ -77,6 +79,33 @@ namespace Projeto_Mercado_API.Controllers
         public ActionResult<List<MovimentacaoEstoque>> ConsultarPorData(string dataInicio, string dataFim)
         {
             return Ok(MovimentacoesEstoqueRepository.ConsultarPorData(dataInicio, dataFim));
+        }
+
+        [HttpPost]
+        public ActionResult<int> Cadastrar(MovimentacaoEstoque novaMovimentacaoEstoque)
+        {
+            return Ok(MovimentacoesEstoqueRepository.Cadastrar(novaMovimentacaoEstoque));
+        }
+
+        [HttpPut]
+        public ActionResult<int> Alterar(MovimentacaoEstoque movimentacaoEstoqueAlterar)
+        {
+            if (movimentacaoEstoqueAlterar.IdMovimentacaoEstoque <= 0)
+            {
+                return BadRequest("O ID da movimentação do estoque deve ser maior do que 0.");
+            }
+            return Ok(MovimentacoesEstoqueRepository.Alterar(movimentacaoEstoqueAlterar));
+        }
+
+        [HttpDelete]
+        [Route("{idMovimentacaoEstoque}")]
+        public ActionResult<int> ExcluirPorId(int idMovimentacaoEstoque)
+        {
+            if (idMovimentacaoEstoque <= 0)
+            {
+                return BadRequest("O ID da movimentação do estoque deve ser maior do que 0.");
+            }
+            return Ok(FuncionariosRepository.ExcluirPorId(idMovimentacaoEstoque));
         }
     }
 }
