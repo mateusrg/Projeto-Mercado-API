@@ -1,5 +1,6 @@
 ﻿using Projeto_Mercado_API.Models;
 using Projeto_Mercado_API.Models.View_Models;
+using System.Globalization;
 
 namespace Projeto_Mercado_API.Repositories
 {
@@ -27,6 +28,31 @@ namespace Projeto_Mercado_API.Repositories
             }
             resultado.Close();
             return compras;
+        }
+
+        public static int CadastrarView(InformacoesCompra novaCompra)
+        {
+            var resultado = Update($@"
+                INSERT INTO Compras (IdFornecedor, IdProduto, Data, Quantidade) VALUES
+                ((SELECT IdFornecedor FROM Fornecedores WHERE Nome = '{novaCompra.Fornecedor}'),
+                (SELECT IdProduto FROM Produtos WHERE Descricao = '{novaCompra.Produto}'),
+                (CONVERT(smalldatetime, '{novaCompra.Data}', 121)),
+                {novaCompra.Quantidade})
+                ");
+            return resultado;
+        }
+
+        public static int AlterarView(InformacoesCompra compraAlterar)
+        {
+            var resultado = Update($@"
+                UPDATE Compras SET
+                IdFornecedor = (SELECT IdFornecedor FROM Fornecedores WHERE Nome = '{compraAlterar.Fornecedor}'),
+                IdProduto = (SELECT IdProduto FROM Produtos WHERE Descricao = '{compraAlterar.Produto}'),
+                Data = (CONVERT(smalldatetime, '{compraAlterar.Data}', 121)),
+                Quantidade = {compraAlterar.Quantidade}
+                WHERE IdCompra = {compraAlterar.IdCompra}
+                ");
+            return resultado;
         }
 
         public static List<Compra> ListarTodos()

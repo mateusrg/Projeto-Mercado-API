@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Projeto_Mercado_API.Models;
+using Projeto_Mercado_API.Models.View_Models;
 using Projeto_Mercado_API.Repositories;
 
 namespace Projeto_Mercado_API.Controllers
@@ -10,9 +11,25 @@ namespace Projeto_Mercado_API.Controllers
     {
         [HttpGet]
         [Route("informacoes")]
-        public ActionResult<List<Compra>> ListarTodosView()
+        public ActionResult<List<InformacoesCompra>> ListarTodosView()
         {
             return Ok(ComprasRepository.ListarTodosView());
+        }
+
+        [HttpPost]
+        [Route("informacoes")]
+        public ActionResult<int> CadastrarView(InformacoesCompra novaCompra)
+        {
+            return Ok(ComprasRepository.CadastrarView(novaCompra));
+        }
+
+        [HttpPut]
+        [Route("informacoes")]
+        public ActionResult<int> AlterarView(InformacoesCompra compraAlterar)
+        {
+            if (compraAlterar.IdCompra <= 0)
+                return BadRequest("O ID da compra deve ser maior do que 0.");
+            return Ok(ComprasRepository.AlterarView(compraAlterar));
         }
 
         [HttpGet]
