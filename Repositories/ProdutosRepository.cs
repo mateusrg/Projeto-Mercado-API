@@ -78,27 +78,48 @@ namespace Projeto_Mercado_API.Repositories
 
         public static int ExcluirPorId (int idProduto)
         {
-            return Update($"DELETE FROM Produtos WHERE IdProduto = {idProduto}");
+            try
+            {
+                return Update($"DELETE FROM Produtos WHERE IdProduto = {idProduto}");
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
         public static int Cadastrar (Produto novoProduto)
         {
-            var resultado = Update($@"
-                INSERT INTO Produtos (CodBarras, Descricao) VALUES
-                ('{novoProduto.CodBarras}', '{novoProduto.Descricao}')
-                ");
-            return resultado;
+            try
+            {
+                var resultado = Update($@"
+                    INSERT INTO Produtos (CodBarras, Descricao) VALUES
+                    ('{novoProduto.CodBarras}', '{novoProduto.Descricao}')
+                    ");
+                return resultado;
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
         public static int Alterar(Produto produtoAlterar)
         {
-            var resultado = Update($@"
-                UPDATE Produtos SET
-                CodBarras = '{produtoAlterar.CodBarras}',
-                Descricao = '{produtoAlterar.Descricao}',
-                WHERE IdProduto = {produtoAlterar.IdProduto}
-                ");
-            return resultado;
+            try
+            {
+                var resultado = Update($@"
+                    UPDATE Produtos SET
+                    CodBarras = '{produtoAlterar.CodBarras}',
+                    Descricao = '{produtoAlterar.Descricao}'
+                    WHERE IdProduto = {produtoAlterar.IdProduto}
+                    ");
+                return resultado;
+            }
+            catch
+            {
+                return 0;
+            }
         }
     }
 }
