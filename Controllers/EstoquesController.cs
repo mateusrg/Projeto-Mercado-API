@@ -56,16 +56,5 @@ namespace Projeto_Mercado_API.Controllers
             }
             return Ok(EstoquesRepository.Alterar(estoqueAlterar));
         }
-
-        [HttpDelete]
-        [Route("{idEstoque}")]
-        public ActionResult<int> ExcluirPorId(int idEstoque)
-        {
-            if (idEstoque <= 0)
-            {
-                return BadRequest("O ID do estoque deve ser maior do que 0.");
-            }
-            return Ok(EstoquesRepository.ExcluirPorId(idEstoque));
-        }
     }
 }

@@ -95,10 +95,5 @@ namespace Projeto_Mercado_API.Repositories
                 ");
             return resultado;
         }
-
-        public static int ExcluirPorId(int idEstoque)
-        {
-            return Update($"DELETE FROM Estoques WHERE IdEstoque = {idEstoque}");
-        }
     }
 }
