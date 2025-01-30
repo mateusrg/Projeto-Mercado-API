@@ -102,6 +102,32 @@ namespace Projeto_Mercado_API.Repositories
             return quantidadeProdutosEstoque;
         }
 
+        public static List<VWQuantidadeProdutoTodosEstoques> ConsultarQuantProdutoEmTodosEstoques(string codBarras)
+        {
+            List<VWQuantidadeProdutoTodosEstoques> quantidadeProdutosTodosEstoques = [];
+            var resultado = Select($@"
+                SELECT e.Descricao AS Estoque,
+                SUM(me.Quantidade) AS Quantidade
+                FROM MovimentacoesEstoque me
+                LEFT JOIN Produtos p ON me.IdProduto = p.IdProduto
+                LEFT JOIN Estoques e ON e.IdEstoque = me.IdEstoque
+                WHERE me.IdProduto =
+                (SELECT pr.IdProduto FROM Produtos pr WHERE pr.CodBarras = '{codBarras}')
+                GROUP BY e.Descricao;
+                ");
+            while (resultado.Read())
+            {
+                var quantidadeProdutoTodosEstoques = new VWQuantidadeProdutoTodosEstoques()
+                {
+                    Estoque = resultado.GetString(0),
+                    Quantidade = resultado.GetInt32(1),
+                };
+                quantidadeProdutosTodosEstoques.Add(quantidadeProdutoTodosEstoques);
+            }
+            resultado.Close();
+            return quantidadeProdutosTodosEstoques;
+        }
+
         public static int Cadastrar(Estoque novoEstoque)
         {
             var resultado = Update($@"
