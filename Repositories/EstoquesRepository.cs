@@ -1,4 +1,5 @@
 ﻿using Projeto_Mercado_API.Models;
+using Projeto_Mercado_API.Models.View_Models;
 
 namespace Projeto_Mercado_API.Repositories
 {
@@ -74,6 +75,31 @@ namespace Projeto_Mercado_API.Repositories
             }
             resultado.Close();
             return estoques;
+        }
+
+        public static List<VWQuantidadeProdutoEstoque> ConsultarPorQuantProdutosNoEstoque(int idEstoque)
+        {
+            List<VWQuantidadeProdutoEstoque> quantidadeProdutosEstoque = [];
+            var resultado = Select($@"
+                SELECT p.Descricao AS Produto,
+                SUM(me.Quantidade) AS Quantidade
+                FROM MovimentacoesEstoque me
+                LEFT JOIN Produtos p ON me.IdProduto = p.IdProduto
+                LEFT JOIN Estoques e ON e.IdEstoque = me.IdEstoque
+                WHERE me.IdEstoque = {idEstoque}
+                GROUP BY p.Descricao;
+                ");
+            while (resultado.Read())
+            {
+                var quantidadeProdutoEstoque = new VWQuantidadeProdutoEstoque()
+                {
+                    Produto = resultado.GetString(0),
+                    Quantidade = resultado.GetInt32(1),
+                };
+                quantidadeProdutosEstoque.Add(quantidadeProdutoEstoque);
+            }
+            resultado.Close();
+            return quantidadeProdutosEstoque;
         }
 
         public static int Cadastrar(Estoque novoEstoque)
