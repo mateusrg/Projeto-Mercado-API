@@ -237,6 +237,41 @@ namespace Projeto_Mercado_API.Repositories
             return 1;
         }
 
+        public static int Vender(MovimentacaoEstoque vendaEstoque)
+        {
+            var resultado = Select($@"
+                SELECT SUM(me.Quantidade) FROM MovimentacoesEstoque me
+                WHERE me.IdProduto = {vendaEstoque.IdProduto}
+                AND me.IdEstoque = {vendaEstoque.IdEstoque};
+                ");
+
+            int quantidadeEmEstoque = 0;
+            while (resultado.Read())
+            {
+                quantidadeEmEstoque = resultado.GetInt32(0);
+            }
+            resultado.Close();
+
+            if (quantidadeEmEstoque < vendaEstoque.Quantidade)
+            {
+                return 0;
+            }
+
+            var movimentacao = new MovimentacaoEstoque()
+            {
+                IdEstoque = vendaEstoque.IdEstoque,
+                IdTipoMovimentacaoEstoque = 2,
+                IdFuncionarioSolicitador = vendaEstoque.IdFuncionarioSolicitador,
+                IdFuncionarioAutenticador = vendaEstoque.IdFuncionarioAutenticador,
+                IdProduto = vendaEstoque.IdProduto,
+                Quantidade = Math.Abs(vendaEstoque.Quantidade) * -1,
+                DataHora = vendaEstoque.DataHora
+            };
+            Cadastrar(movimentacao);
+
+            return 1;
+        }
+
         public static int Cadastrar(MovimentacaoEstoque novaMovimentacaoEstoque)
         {
             var resultado = Update($@"
