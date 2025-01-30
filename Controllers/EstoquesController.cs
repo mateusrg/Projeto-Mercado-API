@@ -41,6 +41,20 @@ namespace Projeto_Mercado_API.Controllers
             return Ok(EstoquesRepository.ConsultarPorDescricao(descricao));
         }
 
+        [HttpGet]
+        [Route("quantidadeProdutosNoEstoque/{idEstoque}")]
+        public ActionResult<List<Estoque>> ConsultarPorQuantProdutosNoEstoque(int idEstoque)
+        {
+            return Ok(EstoquesRepository.ConsultarPorQuantProdutosNoEstoque(idEstoque));
+        }
+
+        [HttpGet]
+        [Route("quantidadeProdutoEmTodosEstoques/{codBarras}")]
+        public ActionResult<List<Estoque>> ConsultarQuantProdutoEmTodosEstoques(string codBarras)
+        {
+            return Ok(EstoquesRepository.ConsultarQuantProdutoEmTodosEstoques(codBarras));
+        }
+
         [HttpPost]
         public ActionResult<int> Cadastrar(Estoque novoEstoque)
         {
@@ -55,17 +69,6 @@ namespace Projeto_Mercado_API.Controllers
                 return BadRequest("O ID do estoque deve ser maior do que 0.");
             }
             return Ok(EstoquesRepository.Alterar(estoqueAlterar));
-        }
-
-        [HttpDelete]
-        [Route("{idEstoque}")]
-        public ActionResult<int> ExcluirPorId(int idEstoque)
-        {
-            if (idEstoque <= 0)
-            {
-                return BadRequest("O ID do estoque deve ser maior do que 0.");
-            }
-            return Ok(EstoquesRepository.ExcluirPorId(idEstoque));
         }
     }
 }

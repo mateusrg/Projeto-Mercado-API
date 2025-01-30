@@ -35,7 +35,7 @@ namespace Projeto_Mercado_API.Controllers
         [Route("setor/{setor}")]
         public ActionResult<List<Funcionario>> ConsultarPorSetor(string setor)
         {
-            return Ok(FuncionariosRepository.ConsultarPorNome(setor));
+            return Ok(FuncionariosRepository.ConsultarPorSetor(setor));
         }
 
         [HttpGet]
