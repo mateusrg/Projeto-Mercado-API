@@ -181,5 +181,41 @@ namespace Projeto_Mercado_API.Repositories
         {
             return Update($"DELETE FROM Compras WHERE IdCompra = {idCompra}");
         }
+        public static CompraCompleta CCC(int IdCompra)
+        {
+            var resultado = Select($@"select 
+                      C.IdCompra,
+                      C.IdProduto,
+                      P.Descricao,
+                      C.Quantidade,
+                      C.IdFornecedor,
+                      F.Nome,
+                      F.CNPJ,
+                      C.Data
+                      from Compras C
+                      left join Produtos P on C.IdProduto = P.IdProduto
+                      left join Fornecedores F on C.IdFornecedor = F.IdFornecedor
+                      where C.IdCompra = {IdCompra}");
+            if (resultado.Read())
+            {
+                var compraCompleta = new CompraCompleta()
+                {
+                    IdCompra = resultado.GetInt32(0),
+                    IdProduto = resultado.GetInt32(1),
+                    Descricao = resultado.GetString(2),
+                    Quantidade = resultado.GetInt32(3),
+                    IdFornecedor = resultado.GetInt32(4),
+                    Nome = resultado.GetString(5),
+                    CNPJ = resultado.GetString(6),
+                    Data = resultado.GetDateTime(7)
+
+                };
+                resultado.Close();
+                return compraCompleta;
+            }
+            resultado.Close();
+            return null;
+        }
+
     }
 }

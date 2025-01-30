@@ -97,5 +97,30 @@ namespace Projeto_Mercado_API.Controllers
                 return BadRequest("O ID da compra deve ser maior do que 0.");
             return Ok(FornecedoresRepository.ExcluirPorId(idCompra));
         }
+
+        [HttpPost]
+        [Route("Compra")]
+        public ActionResult<int> Comprar(SolicitacaoCompra compra)
+        {
+            Compra novaCompra = new Compra()
+            {
+                IdFornecedor = compra.IdFornecedor,
+                IdProduto = compra.IdProduto,
+                Data = compra.Data,
+                Quantidade = compra.Quantidade
+            };
+            MovimentacaoEstoque novaMovimentacaoEstoque = new MovimentacaoEstoque()
+            {
+                IdProduto = compra.IdProduto,
+                IdEstoque = 1,
+                IdTipoMovimentacaoEstoque = 1,
+                IdFuncionarioAutenticador = compra.IdFuncionarioAutenticador,
+                IdFuncionarioSolicitador = compra.IdFuncionarioSolicitador,
+                DataHora = compra.Data,
+                Quantidade = compra.Quantidade
+            };
+            var resultado = (ComprasRepository.Cadastrar(novaCompra), MovimentacoesEstoqueRepository.Cadastrar(novaMovimentacaoEstoque));
+            return Ok("Compra cadastrada com sucesso!");
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Projeto_Mercado_API.Models;
+using Projeto_Mercado_API.Models.View_Models;
 
 namespace Projeto_Mercado_API.Repositories
 {
@@ -186,6 +187,54 @@ namespace Projeto_Mercado_API.Repositories
             }
             resultado.Close();
             return movimentacoesEstoque;
+        }
+
+        public static int FazerMovimentacao(VWMovimentacaoEstoque movimentacaoEstoque)
+        {
+            var resultado = Select($@"
+                SELECT SUM(me.Quantidade) FROM MovimentacoesEstoque me
+                WHERE me.IdProduto = {movimentacaoEstoque.idProduto}
+                AND me.IdEstoque = {movimentacaoEstoque.idEstoqueOrigem};
+                ");
+
+            int quantidadeEmEstoque = 0;
+            while (resultado.Read())
+            {
+                quantidadeEmEstoque = resultado.GetInt32(0);
+            }
+            resultado.Close();
+
+            if (quantidadeEmEstoque < movimentacaoEstoque.quantidade)
+            {
+                return 0;
+            }
+
+            var primeiraMovimentacao = new MovimentacaoEstoque()
+            {
+                IdEstoque = movimentacaoEstoque.idEstoqueOrigem,
+                IdTipoMovimentacaoEstoque = movimentacaoEstoque.idTipoMovimentacaoOrigem,
+                IdFuncionarioSolicitador = movimentacaoEstoque.idFuncionarioSolicitador,
+                IdFuncionarioAutenticador = movimentacaoEstoque.idFuncionarioAutenticador,
+                IdProduto = movimentacaoEstoque.idProduto,
+                Quantidade = Math.Abs(movimentacaoEstoque.quantidade) * -1,
+                DataHora = movimentacaoEstoque.dataHora
+            };
+            
+            var segundaMovimentacao = new MovimentacaoEstoque()
+            {
+                IdEstoque = movimentacaoEstoque.idEstoqueDestino,
+                IdTipoMovimentacaoEstoque = movimentacaoEstoque.idTipoMovimentacaoDestino,
+                IdFuncionarioSolicitador = movimentacaoEstoque.idFuncionarioSolicitador,
+                IdFuncionarioAutenticador = movimentacaoEstoque.idFuncionarioAutenticador,
+                IdProduto = movimentacaoEstoque.idProduto,
+                Quantidade = Math.Abs(movimentacaoEstoque.quantidade),
+                DataHora = movimentacaoEstoque.dataHora
+            };
+
+            Cadastrar(primeiraMovimentacao);
+            Cadastrar(segundaMovimentacao);
+
+            return 1;
         }
 
         public static int Cadastrar(MovimentacaoEstoque novaMovimentacaoEstoque)
