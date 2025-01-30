@@ -352,32 +352,6 @@
   },
   {
     "ContainingType": "Projeto_Mercado_API.Controllers.EstoquesController",
-    "Method": "ExcluirPorId",
-    "RelativePath": "Estoques/{idEstoque}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idEstoque",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Int32",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Projeto_Mercado_API.Controllers.EstoquesController",
     "Method": "ConsultarPorDescricao",
     "RelativePath": "Estoques/descricao/{descricao}",
     "HttpMethod": "GET",
@@ -419,6 +393,32 @@
     "ReturnTypes": [
       {
         "Type": "Projeto_Mercado_API.Models.Estoque",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.EstoquesController",
+    "Method": "ConsultarPorQuantProdutosNoEstoque",
+    "RelativePath": "Estoques/quantidadeProdutosNoEstoque/{idEstoque}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idEstoque",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.Estoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

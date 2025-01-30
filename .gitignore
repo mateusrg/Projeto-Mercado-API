@@ -246,3 +246,6 @@ ModelManifest.xml
 
 # JetBrains Software
 .idea/
+/.vs
+/bin
+/obj
