@@ -122,5 +122,16 @@ namespace Projeto_Mercado_API.Controllers
             var resultado = (ComprasRepository.Cadastrar(novaCompra), MovimentacoesEstoqueRepository.Cadastrar(novaMovimentacaoEstoque));
             return Ok("Compra cadastrada com sucesso!");
         }
+        
+        [HttpGet]
+        [Route("CCC")]
+        public ActionResult<CompraCompleta> CCC(int IdCompraCompleta)
+        {
+            var resultado = ComprasRepository.CCC(IdCompraCompleta);
+            if (resultado == null)
+                return BadRequest("Compra não encontrada.");
+            return Ok(resultado);
+        }
+
     }
 }
