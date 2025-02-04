@@ -86,7 +86,7 @@ namespace Projeto_Mercado_API.Repositories
 
         public static Funcionario? ConsultarPorEmail(string email)
         {
-            var resultado = Select($"SELECT * FROM Funcionarios WHERE Email = {email}");
+            var resultado = Select($"SELECT * FROM Funcionarios WHERE Email = '{email}'");
             if (resultado.Read())
             {
                 var funcionario = new Funcionario()
