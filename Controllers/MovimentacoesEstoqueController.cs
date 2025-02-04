@@ -130,5 +130,15 @@ namespace Projeto_Mercado_API.Controllers
             }
             return Ok(FuncionariosRepository.ExcluirPorId(idMovimentacaoEstoque));
         }
+
+        [HttpGet]
+        [Route("estoqueCompleto/{idEstoque}")]
+        public ActionResult<List<MovimentacaoEstoque>> ConsultarPorEstoqueCompleto(int idEstoque)
+        {
+            var movimentacaoEstoque = MovimentacoesEstoqueRepository.ConsultarPorEstoqueCompleto(idEstoque);
+            if (movimentacaoEstoque == null)
+                return BadRequest("estoque não encontrado.");
+            return Ok(movimentacaoEstoque);
+        }
     }
 }
