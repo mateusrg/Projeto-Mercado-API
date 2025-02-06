@@ -90,7 +90,7 @@ namespace Projeto_Mercado_API.Repositories
             var resultado = Update($@"
                 UPDATE Fornecedores SET
                 CNPJ = '{fornecedorAlterar.CNPJ}',
-                Nome = '{fornecedorAlterar.Nome}',
+                Nome = '{fornecedorAlterar.Nome}'
                 WHERE IdFornecedor = {fornecedorAlterar.IdFornecedor}
                 ");
             return resultado;
