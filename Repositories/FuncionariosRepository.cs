@@ -104,6 +104,31 @@ namespace Projeto_Mercado_API.Repositories
             return null;
         }
 
+        public static List<Funcionario> ConsultarPorNomeEmailSetorId(string texto)
+        {
+            List<Funcionario> funcionarios = new List<Funcionario>();
+            var resultado = Select($@"SELECT * 
+                                    FROM Funcionarios 
+                                    WHERE 
+                                    IdFuncionario LIKE '%{texto}%' OR
+                                    Nome LIKE '%{texto}%' OR
+                                    Setor LIKE '%{texto}%' OR
+                                    Email LIKE '%{texto}%'");
+            while (resultado.Read())
+            {
+                var funcionario = new Funcionario()
+                {
+                    IdFuncionario = resultado.GetInt32(0),
+                    Nome = resultado.GetString(1),
+                    Setor = resultado.GetString(2),
+                    Email = resultado.GetString(3),
+                };
+                funcionarios.Add(funcionario);
+            }
+            resultado.Close();
+            return funcionarios;
+        }
+
         public static int Cadastrar(Funcionario novoFuncionario)
         {
             var resultado = Update($@"

@@ -45,6 +45,13 @@ namespace Projeto_Mercado_API.Controllers
             return Ok(FuncionariosRepository.ConsultarPorEmail(email));
         }
 
+        [HttpGet]
+        [Route("IdNomeSetorEmail/{texto}")]
+        public ActionResult<List<Funcionario>> ConsultarPorNomeEmailSetorId(string texto)
+        {
+            return Ok(FuncionariosRepository.ConsultarPorNomeEmailSetorId(texto));
+        }
+
         [HttpPost]
         [Route("login")]
         public ActionResult<Funcionario> Login([FromBody] PaginaLogin request)

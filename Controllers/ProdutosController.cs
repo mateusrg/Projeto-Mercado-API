@@ -41,6 +41,13 @@ namespace Projeto_Mercado_API.Controllers
             return Ok(ProdutosRepository.ConsultarPorDescricao(descricao));
         }
 
+        [HttpGet]
+        [Route("descricaoECodBarras/{texto}")]
+        public ActionResult<List<Produto>> ConsultarPorDescricaoECodBarras(string texto)
+        {
+            return Ok(ProdutosRepository.ConsultarPorDescricaoECodBarras(texto));
+        }
+
         [HttpPost]
         public ActionResult<int> Cadastrar(Produto novoProduto)
         {
