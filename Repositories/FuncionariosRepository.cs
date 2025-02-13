@@ -132,8 +132,8 @@ namespace Projeto_Mercado_API.Repositories
         public static int Cadastrar(Funcionario novoFuncionario)
         {
             var resultado = Update($@"
-                INSERT INTO Funcionarios (IdFuncionario, Nome, Setor, Email, Senha) VALUES
-                ({novoFuncionario.IdFuncionario}, '{novoFuncionario.Nome}', '{novoFuncionario.Setor}',
+                INSERT INTO Funcionarios (Nome, Setor, Email, Senha) VALUES
+                ('{novoFuncionario.Nome}', '{novoFuncionario.Setor}',
                 '{novoFuncionario.Email}', '{novoFuncionario.Senha}')
                 ");
             return resultado;
@@ -145,8 +145,8 @@ namespace Projeto_Mercado_API.Repositories
                 UPDATE Funcionarios SET
                 Nome = '{funcionarioAlterar.Nome}',
                 Setor = '{funcionarioAlterar.Setor}',
-                Email = {funcionarioAlterar.Email},
-                Senha = {funcionarioAlterar.Senha},
+                Email = '{funcionarioAlterar.Email}',
+                Senha = '{funcionarioAlterar.Senha}'
                 WHERE IdFuncionario = {funcionarioAlterar.IdFuncionario}
                 ");
             return resultado;
