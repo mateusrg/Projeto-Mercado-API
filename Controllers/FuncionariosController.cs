@@ -45,6 +45,13 @@ namespace Projeto_Mercado_API.Controllers
             return Ok(FuncionariosRepository.ConsultarPorEmail(email));
         }
 
+        [HttpGet]
+        [Route("IdNomeSetorEmail/{texto}")]
+        public ActionResult<List<Funcionario>> ConsultarPorNomeEmailSetorId(string texto)
+        {
+            return Ok(FuncionariosRepository.ConsultarPorNomeEmailSetorId(texto));
+        }
+
         [HttpPost]
         [Route("login")]
         public ActionResult<Funcionario> Login([FromBody] PaginaLogin request)
@@ -57,6 +64,22 @@ namespace Projeto_Mercado_API.Controllers
             }
 
             return Ok(funcionario);
+        }
+
+        [HttpPost]
+        public ActionResult<int> Cadastrar(Funcionario novoFuncionario)
+        {
+            return Ok(FuncionariosRepository.Cadastrar(novoFuncionario));
+        }
+
+        [HttpPut]
+        public ActionResult<int> Alterar(Funcionario funcionarioAlterar)
+        {
+            if (funcionarioAlterar.IdFuncionario <= 0)
+            {
+                return BadRequest("O ID do funcionario deve ser maior do que 0.");
+            }
+            return Ok(FuncionariosRepository.Alterar(funcionarioAlterar));
         }
     }
 }

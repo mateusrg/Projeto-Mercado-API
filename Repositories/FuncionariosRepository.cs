@@ -104,11 +104,36 @@ namespace Projeto_Mercado_API.Repositories
             return null;
         }
 
+        public static List<Funcionario> ConsultarPorNomeEmailSetorId(string texto)
+        {
+            List<Funcionario> funcionarios = new List<Funcionario>();
+            var resultado = Select($@"SELECT * 
+                                    FROM Funcionarios 
+                                    WHERE 
+                                    IdFuncionario LIKE '%{texto}%' OR
+                                    Nome LIKE '%{texto}%' OR
+                                    Setor LIKE '%{texto}%' OR
+                                    Email LIKE '%{texto}%'");
+            while (resultado.Read())
+            {
+                var funcionario = new Funcionario()
+                {
+                    IdFuncionario = resultado.GetInt32(0),
+                    Nome = resultado.GetString(1),
+                    Setor = resultado.GetString(2),
+                    Email = resultado.GetString(3),
+                };
+                funcionarios.Add(funcionario);
+            }
+            resultado.Close();
+            return funcionarios;
+        }
+
         public static int Cadastrar(Funcionario novoFuncionario)
         {
             var resultado = Update($@"
-                INSERT INTO Funcionarios (IdFuncionario, Nome, Setor, Email, Senha) VALUES
-                ({novoFuncionario.IdFuncionario}, '{novoFuncionario.Nome}', '{novoFuncionario.Setor}',
+                INSERT INTO Funcionarios (Nome, Setor, Email, Senha) VALUES
+                ('{novoFuncionario.Nome}', '{novoFuncionario.Setor}',
                 '{novoFuncionario.Email}', '{novoFuncionario.Senha}')
                 ");
             return resultado;
@@ -120,8 +145,8 @@ namespace Projeto_Mercado_API.Repositories
                 UPDATE Funcionarios SET
                 Nome = '{funcionarioAlterar.Nome}',
                 Setor = '{funcionarioAlterar.Setor}',
-                Email = {funcionarioAlterar.Email},
-                Senha = {funcionarioAlterar.Senha},
+                Email = '{funcionarioAlterar.Email}',
+                Senha = '{funcionarioAlterar.Senha}'
                 WHERE IdFuncionario = {funcionarioAlterar.IdFuncionario}
                 ");
             return resultado;

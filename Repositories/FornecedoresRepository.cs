@@ -76,6 +76,30 @@ namespace Projeto_Mercado_API.Repositories
             return fornecedores;
         }
 
+        public static List<Fornecedor> ConsultarPorNomeECNPJ(string texto)
+        {
+            List<Fornecedor> fornecedores = new List<Fornecedor>();
+            var resultado = Select($@"SELECT * 
+                            FROM Fornecedores 
+                            WHERE 
+                                Nome LIKE '%{texto}%' OR
+                                CNPJ LIKE '%{texto}%' OR
+                                REPLACE(REPLACE(REPLACE(REPLACE(CNPJ, '.', ''), '/', ''), '-', ''), ' ', '')
+                                LIKE '%{texto}%'");
+            while (resultado.Read())
+            {
+                var fornecedor = new Fornecedor()
+                {
+                    IdFornecedor = resultado.GetInt32(0),
+                    CNPJ = resultado.GetString(1),
+                    Nome = resultado.GetString(2)
+                };
+                fornecedores.Add(fornecedor);
+            }
+            resultado.Close();
+            return fornecedores;
+        }
+
         public static int Cadastrar(Fornecedor novoFornecedor)
         {
             var resultado = Update($@"
@@ -90,7 +114,7 @@ namespace Projeto_Mercado_API.Repositories
             var resultado = Update($@"
                 UPDATE Fornecedores SET
                 CNPJ = '{fornecedorAlterar.CNPJ}',
-                Nome = '{fornecedorAlterar.Nome}',
+                Nome = '{fornecedorAlterar.Nome}'
                 WHERE IdFornecedor = {fornecedorAlterar.IdFornecedor}
                 ");
             return resultado;
