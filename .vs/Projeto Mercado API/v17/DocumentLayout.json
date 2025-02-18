@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\leoan\\onedrive\\documentos\\github\\projeto-mercado-api\\repositories\\tiposmovimentacaoestoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:repositories\\tiposmovimentacaoestoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\leoan\\onedrive\\documentos\\github\\projeto-mercado-api\\repositories\\tiposestoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:repositories\\tiposestoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\leoan\\onedrive\\documentos\\github\\projeto-mercado-api\\controllers\\tiposmovimentacaoestoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:controllers\\tiposmovimentacaoestoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\leoan\\onedrive\\documentos\\github\\projeto-mercado-api\\repositories\\funcionariosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,19 +43,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "TiposMovimentacaoEstoqueRepository.cs",
+              "DocumentMoniker": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Repositories\\TiposMovimentacaoEstoqueRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\TiposMovimentacaoEstoqueRepository.cs",
+              "ToolTip": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Repositories\\TiposMovimentacaoEstoqueRepository.cs*",
+              "RelativeToolTip": "Repositories\\TiposMovimentacaoEstoqueRepository.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T17:37:10.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TiposMovimentacaoEstoqueController.cs",
+              "DocumentMoniker": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Controllers\\TiposMovimentacaoEstoqueController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TiposMovimentacaoEstoqueController.cs",
+              "ToolTip": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Controllers\\TiposMovimentacaoEstoqueController.cs",
+              "RelativeToolTip": "Controllers\\TiposMovimentacaoEstoqueController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowB0AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T17:36:57.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "TiposEstoqueRepository.cs",
               "DocumentMoniker": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Repositories\\TiposEstoqueRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\TiposEstoqueRepository.cs",
               "ToolTip": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Repositories\\TiposEstoqueRepository.cs",
               "RelativeToolTip": "Repositories\\TiposEstoqueRepository.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAvwDsAAABIAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAnwDsAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-18T17:11:31.548Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Funcionario.cs",
               "DocumentMoniker": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Models\\Funcionario.cs",
               "RelativeDocumentMoniker": "Models\\Funcionario.cs",
@@ -59,20 +93,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "FuncionariosRepository.cs",
               "DocumentMoniker": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Repositories\\FuncionariosRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\FuncionariosRepository.cs",
               "ToolTip": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Repositories\\FuncionariosRepository.cs",
               "RelativeToolTip": "Repositories\\FuncionariosRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIUAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJ4AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-04T16:47:16.582Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "FuncionariosController.cs",
               "DocumentMoniker": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Controllers\\FuncionariosController.cs",
               "RelativeDocumentMoniker": "Controllers\\FuncionariosController.cs",
