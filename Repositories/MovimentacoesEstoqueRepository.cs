@@ -240,17 +240,13 @@ namespace Projeto_Mercado_API.Repositories
         public static int Vender(VMVenda novaMovimentacaoEstoque)
         {
             var resultado = Select($@"
-                INSERT INTO MovimentacoesEstoque(IdEstoque, IdTipoMovimentacaoEstoque, IdFuncionarioSolicitador,
-                IdFuncionarioAutenticador, IdProduto, Quantidade, DataHora) VALUES
-                (2, 8,
-                {novaMovimentacaoEstoque.IdFuncionarioSolicitador}, {novaMovimentacaoEstoque.IdFuncionarioAutenticador},
-                {novaMovimentacaoEstoque.IdProduto}, {novaMovimentacaoEstoque.Quantidade}, '{novaMovimentacaoEstoque.DataHora}')
-                ");
+                SELECT M.Quantidade FROM MovimentacoesEstoque M WHERE M.IdProduto = ${novaMovimentacaoEstoque.IdProduto} AND M.IdEstoque = ${novaMovimentacaoEstoque.IdEstoque};
+            ");
 
             int quantidadeEmEstoque = 0;
             while (resultado.Read())
             {
-                quantidadeEmEstoque = resultado.GetInt32(0);
+                quantidadeEmEstoque += resultado.GetInt32(0);
             }
             resultado.Close();
 
@@ -267,7 +263,6 @@ namespace Projeto_Mercado_API.Repositories
                 Quantidade = Math.Abs(novaMovimentacaoEstoque.Quantidade) * -1,
                 DataHora = novaMovimentacaoEstoque.DataHora,
                 IdEstoque = 2,
-                IdMovimentacaoEstoque = novaMovimentacaoEstoque.IdMovimentacaoEstoque,
                 IdTipoMovimentacaoEstoque = 8
             };
             Cadastrar(movimentacao);
