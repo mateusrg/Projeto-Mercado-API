@@ -303,23 +303,23 @@ namespace Projeto_Mercado_API.Repositories
             return Update($"DELETE FROM MovimentacoesEstoque WHERE IdMovimentacaoEstoque = {idMovimentacaoEstoque}");
         }
 
-        public static List<VMEstoques> ConsultarPorEstoqueCompleto(int idEstoque)
+        public static List<VMTranserirEstoque> ConsultarPorEstoqueCompleto(int idEstoque)
         {
-            List<VMEstoques> movimentacoesEstoqueCompleto = new List<VMEstoques>();
+            List<VMTranserirEstoque> movimentacoesEstoqueCompleto = new List<VMTranserirEstoque>();
             var resultado = Select($"select \r\n E.IdEstoque,\r\n E.Descricao,\r\n E.IdTipoEstoque,\r\n TE.Descricao AS 'TipoEstoque',\r\n ME.IdMovimentacaoEstoque,\r\n ME.IdTipoMovimentacaoEstoque,\r\n Me.IdFuncionarioSolicitador,\r\n ME.idFuncionarioAutenticador,\r\n ME.IdProduto,\r\n ME.Quantidade,\r\n ME.DataHora,\r\n FA.IdFuncionario,\r\n FA.Nome,\r\n FS.IdFuncionario,\r\n FS.Nome,\r\n TME.IdTipoMovimentacaoEstoque,\r\n TME.Descricao,\r\n P.Descricao,\r\n P.CodBarras\r\n from MovimentacoesEstoque ME\r\n  join TiposEstoque TE on ME.IdTipoMovimentacaoEstoque = TE.IdTipoEstoque\r\n  join Estoques E on ME.IdEstoque = E.IdEstoque\r\n  join Funcionarios FA on ME.idFuncionarioAutenticador = FA.IdFuncionario\r\n  join Funcionarios FS on ME.IdFuncionarioSolicitador = FS.IdFuncionario\r\n  join TiposMovimentacaoEstoque TME ON ME.IdTipoMovimentacaoEstoque = TME.IdTipoMovimentacaoEstoque\r\n  join Produtos P on ME.IdProduto = P.IdProduto\r\n where E.IdEstoque = {idEstoque};");
             while (resultado.Read())
             {
-                var estoqueCompleto = new VMEstoques()
+                var estoqueCompleto = new VMTranserirEstoque()
                 {
                     IdEstoque = resultado.GetInt32(0),
-                    DescricaoE = resultado.GetString(1),
+                    DescricaoEstoque = resultado.GetString(1),
                     IdTipoEstoque = resultado.GetInt32(2),
                     IdMovimentacaoEstoque = resultado.GetInt32(3),
                     IdTipoMovimentacaoEstoque = resultado.GetInt32(4),
                     IdFuncionarioSolicitador = resultado.GetInt32(5),
-                    NomeSolicitador = resultado.GetString(11),
+                    FuncionarioSolicitador = resultado.GetString(11),
                     IdFuncionarioAutenticador = resultado.GetInt32(6),
-                    NomeAutenticador = resultado.GetString(13),
+                    FuncionarioAutenticador = resultado.GetString(13),
                     IdProduto = resultado.GetInt32(7),
                     Quantidade = resultado.GetInt32(8),
                     DataHora = resultado.GetDateTime(9)
