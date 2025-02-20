@@ -237,35 +237,33 @@ namespace Projeto_Mercado_API.Repositories
             return 1;
         }
 
-        public static int Vender(MovimentacaoEstoque vendaEstoque)
+        public static int Vender(VMVenda novaMovimentacaoEstoque)
         {
             var resultado = Select($@"
-                SELECT SUM(me.Quantidade) FROM MovimentacoesEstoque me
-                WHERE me.IdProduto = {vendaEstoque.IdProduto}
-                AND me.IdEstoque = {vendaEstoque.IdEstoque};
-                ");
+                SELECT M.Quantidade FROM MovimentacoesEstoque M WHERE M.IdProduto = ${novaMovimentacaoEstoque.IdProduto} AND M.IdEstoque = ${novaMovimentacaoEstoque.IdEstoque};
+            ");
 
             int quantidadeEmEstoque = 0;
             while (resultado.Read())
             {
-                quantidadeEmEstoque = resultado.GetInt32(0);
+                quantidadeEmEstoque += resultado.GetInt32(0);
             }
             resultado.Close();
 
-            if (quantidadeEmEstoque < vendaEstoque.Quantidade)
+            if (quantidadeEmEstoque < novaMovimentacaoEstoque.Quantidade)
             {
                 return 0;
             }
 
             var movimentacao = new MovimentacaoEstoque()
             {
-                IdEstoque = vendaEstoque.IdEstoque,
-                IdTipoMovimentacaoEstoque = 2,
-                IdFuncionarioSolicitador = vendaEstoque.IdFuncionarioSolicitador,
-                IdFuncionarioAutenticador = vendaEstoque.IdFuncionarioAutenticador,
-                IdProduto = vendaEstoque.IdProduto,
-                Quantidade = Math.Abs(vendaEstoque.Quantidade) * -1,
-                DataHora = vendaEstoque.DataHora
+                IdFuncionarioSolicitador = novaMovimentacaoEstoque.IdFuncionarioSolicitador,
+                IdFuncionarioAutenticador = novaMovimentacaoEstoque.IdFuncionarioAutenticador,
+                IdProduto = novaMovimentacaoEstoque.IdProduto,
+                Quantidade = Math.Abs(novaMovimentacaoEstoque.Quantidade) * -1,
+                DataHora = novaMovimentacaoEstoque.DataHora,
+                IdEstoque = 2,
+                IdTipoMovimentacaoEstoque = 8
             };
             Cadastrar(movimentacao);
 

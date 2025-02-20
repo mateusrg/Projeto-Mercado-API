@@ -57,7 +57,7 @@ namespace Projeto_Mercado_API.Repositories
 
         public static int Cadastrar(TipoEstoque novoTipoEstoque)
         {
-            return Update($"INSERT INTO TiposEstoque (Descricao) ('{novoTipoEstoque.Descricao}')");
+            return Update($"INSERT INTO TiposEstoque (Descricao) VALUES ('{novoTipoEstoque.Descricao}')");
         }
 
         public static int Alterar(TipoEstoque tipoEstoqueAlterar)

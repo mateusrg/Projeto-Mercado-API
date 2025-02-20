@@ -1,18 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\",
+  "WorkspaceRootPath": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\controllers\\estoquescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:controllers\\estoquescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\leoan\\onedrive\\documentos\\github\\projeto-mercado-api\\repositories\\tiposmovimentacaoestoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:repositories\\tiposmovimentacaoestoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\repositories\\estoquesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:repositories\\estoquesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\leoan\\onedrive\\documentos\\github\\projeto-mercado-api\\repositories\\tiposestoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:repositories\\tiposestoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\models\\view models\\vwquantidadeprodutoestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:models\\view models\\vwquantidadeprodutoestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\leoan\\onedrive\\documentos\\github\\projeto-mercado-api\\controllers\\tiposmovimentacaoestoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:controllers\\tiposmovimentacaoestoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\leoan\\onedrive\\documentos\\github\\projeto-mercado-api\\repositories\\funcionariosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:repositories\\funcionariosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\leoan\\onedrive\\documentos\\github\\projeto-mercado-api\\controllers\\funcionarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:controllers\\funcionarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\leoan\\onedrive\\documentos\\github\\projeto-mercado-api\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,46 +34,87 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EstoquesController.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Controllers\\EstoquesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EstoquesController.cs",
-              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Controllers\\EstoquesController.cs*",
-              "RelativeToolTip": "Controllers\\EstoquesController.cs*",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowDAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-30T02:26:30.2Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EstoquesRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Repositories\\EstoquesRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\EstoquesRepository.cs",
-              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Repositories\\EstoquesRepository.cs",
-              "RelativeToolTip": "Repositories\\EstoquesRepository.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAiwFAAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "TiposMovimentacaoEstoqueRepository.cs",
+              "DocumentMoniker": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Repositories\\TiposMovimentacaoEstoqueRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\TiposMovimentacaoEstoqueRepository.cs",
+              "ToolTip": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Repositories\\TiposMovimentacaoEstoqueRepository.cs*",
+              "RelativeToolTip": "Repositories\\TiposMovimentacaoEstoqueRepository.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T19:33:00.63Z",
+              "WhenOpened": "2025-02-18T17:37:10.781Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "VWQuantidadeProdutoEstoque.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Models\\View Models\\VWQuantidadeProdutoEstoque.cs",
-              "RelativeDocumentMoniker": "Models\\View Models\\VWQuantidadeProdutoEstoque.cs",
-              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Models\\View Models\\VWQuantidadeProdutoEstoque.cs",
-              "RelativeToolTip": "Models\\View Models\\VWQuantidadeProdutoEstoque.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "Title": "TiposMovimentacaoEstoqueController.cs",
+              "DocumentMoniker": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Controllers\\TiposMovimentacaoEstoqueController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TiposMovimentacaoEstoqueController.cs",
+              "ToolTip": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Controllers\\TiposMovimentacaoEstoqueController.cs",
+              "RelativeToolTip": "Controllers\\TiposMovimentacaoEstoqueController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowB0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T20:29:32.786Z",
+              "WhenOpened": "2025-02-18T17:36:57.178Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TiposEstoqueRepository.cs",
+              "DocumentMoniker": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Repositories\\TiposEstoqueRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\TiposEstoqueRepository.cs",
+              "ToolTip": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Repositories\\TiposEstoqueRepository.cs",
+              "RelativeToolTip": "Repositories\\TiposEstoqueRepository.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAnwDsAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T17:11:31.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Funcionario.cs",
+              "DocumentMoniker": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Models\\Funcionario.cs",
+              "RelativeDocumentMoniker": "Models\\Funcionario.cs",
+              "ToolTip": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Models\\Funcionario.cs",
+              "RelativeToolTip": "Models\\Funcionario.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T16:52:14.711Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FuncionariosRepository.cs",
+              "DocumentMoniker": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Repositories\\FuncionariosRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\FuncionariosRepository.cs",
+              "ToolTip": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Repositories\\FuncionariosRepository.cs",
+              "RelativeToolTip": "Repositories\\FuncionariosRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJ4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T16:47:16.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FuncionariosController.cs",
+              "DocumentMoniker": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Controllers\\FuncionariosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FuncionariosController.cs",
+              "ToolTip": "C:\\Users\\leoan\\OneDrive\\Documentos\\GitHub\\Projeto-Mercado-API\\Controllers\\FuncionariosController.cs",
+              "RelativeToolTip": "Controllers\\FuncionariosController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowCMAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T16:46:43.403Z"
             }
           ]
         }

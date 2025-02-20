@@ -7,7 +7,7 @@ namespace Projeto_Mercado_API.Repositories
         public static List<TipoMovimentacaoEstoque> ListarTodos()
         {
             List<TipoMovimentacaoEstoque> tiposMovimentacaoEstoque = new List<TipoMovimentacaoEstoque>();
-            var resultado = Select($"SELECT * FROM Compras");
+            var resultado = Select($"SELECT * FROM TiposMovimentacaoEstoque");
             while (resultado.Read())
             {
                 var tipoMovimentacaoEstoque = new TipoMovimentacaoEstoque()
@@ -57,7 +57,7 @@ namespace Projeto_Mercado_API.Repositories
 
         public static int Cadastrar(TipoMovimentacaoEstoque novoTipoMovimentacaoEstoque)
         {
-            return Update($"INSERT INTO TiposMovimentacaoEstoque (Descricao) ('{novoTipoMovimentacaoEstoque.Descricao}')");
+            return Update($"INSERT INTO TiposMovimentacaoEstoque (Descricao) VALUES ('{novoTipoMovimentacaoEstoque.Descricao}')");
         }
 
         public static int Alterar(TipoMovimentacaoEstoque tipoMovimentacaoEstoqueAlterar)

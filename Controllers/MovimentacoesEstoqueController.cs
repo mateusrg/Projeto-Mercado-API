@@ -84,7 +84,7 @@ namespace Projeto_Mercado_API.Controllers
 
         [HttpPost]
         [Route("venderProduto")]
-        public ActionResult<string> Vender(MovimentacaoEstoque vendaEstoque)
+        public ActionResult<string> Vender(VMVenda vendaEstoque)
         {
             if (vendaEstoque.IdEstoque <= 0)
             {
