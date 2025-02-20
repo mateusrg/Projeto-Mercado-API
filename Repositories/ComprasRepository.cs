@@ -10,7 +10,8 @@ namespace Projeto_Mercado_API.Repositories
         {
             List<InformacoesCompra> compras = new List<InformacoesCompra>();
             var resultado = Select($@"
-                SELECT C.IdCompra, F.Nome, P.Descricao, C.Data, C.Quantidade FROM Compras C
+                SELECT C.IdCompra, F.IdFornecedor, P.IdProduto, F.Nome, P.Descricao, C.Data, C.Quantidade
+                FROM Compras C
                 JOIN Fornecedores F ON C.IdFornecedor = F.IdFornecedor
                 JOIN Produtos P ON C.IdProduto = P.IdProduto;
                 ");
@@ -19,10 +20,12 @@ namespace Projeto_Mercado_API.Repositories
                 var compra = new InformacoesCompra()
                 {
                     IdCompra = resultado.GetInt32(0),
-                    Fornecedor = resultado.GetString(1),
-                    Produto = resultado.GetString(2),
-                    Data = resultado.GetDateTime(3).ToString("dd/MM/yyyy"),
-                    Quantidade = resultado.GetInt32(4)
+                    IdFornecedor = resultado.GetInt32(1),
+                    IdProduto = resultado.GetInt32(2),
+                    Fornecedor = resultado.GetString(3),
+                    Produto = resultado.GetString(4),
+                    Data = resultado.GetDateTime(5).ToString("dd/MM/yyyy"),
+                    Quantidade = resultado.GetInt32(6)
                 };
                 compras.Add(compra);
             }
@@ -171,7 +174,7 @@ namespace Projeto_Mercado_API.Repositories
                 IdFornecedor = {compraAlterar.IdFornecedor},
                 IdProduto = {compraAlterar.IdProduto},
                 Data = '{compraAlterar.Data}',
-                Quantidade = {compraAlterar.Quantidade},
+                Quantidade = {compraAlterar.Quantidade}
                 WHERE IdCompra = {compraAlterar.IdCompra}
                 ");
             return resultado;
