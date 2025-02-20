@@ -124,8 +124,8 @@ namespace Projeto_Mercado_API.Controllers
         }
         
         [HttpGet]
-        [Route("CCC/{IdCompraCompleta}")]
-        public ActionResult<CompraCompleta> CCC(int IdCompraCompleta)
+        [Route("ConsultarCompraCompleta/{IdCompraCompleta}")]
+        public ActionResult<CompraCompleta> ConsultarCompraCompleta(int IdCompraCompleta)
         {
             var resultado = ComprasRepository.ConsultarCompraCompleta(IdCompraCompleta);
             if (resultado == null) { return BadRequest("Compra não encontrada.");}
