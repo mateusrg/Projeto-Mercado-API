@@ -262,7 +262,7 @@ namespace Projeto_Mercado_API.Repositories
                 IdProduto = novaMovimentacaoEstoque.IdProduto,
                 Quantidade = Math.Abs(novaMovimentacaoEstoque.Quantidade) * -1,
                 DataHora = novaMovimentacaoEstoque.DataHora,
-                IdEstoque = 2,
+                IdEstoque = novaMovimentacaoEstoque.IdEstoque,
                 IdTipoMovimentacaoEstoque = 8
             };
             Cadastrar(movimentacao);
