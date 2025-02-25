@@ -76,6 +76,14 @@ namespace Projeto_Mercado_API.Controllers
         }
 
         [HttpPost]
+        [Route("tudo")]
+        public ActionResult<List<Compra>> ConsultarPorTudo(FiltroParaCompra compra)
+        {
+            var resultado = ComprasRepository.ConsultarPorTudo(compra);
+            return Ok(resultado);
+        }
+
+        [HttpPost]
         public ActionResult<int> Cadastrar(Compra novaCompra)
         {
             return Ok(ComprasRepository.Cadastrar(novaCompra));
