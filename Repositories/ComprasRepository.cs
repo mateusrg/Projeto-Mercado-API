@@ -219,7 +219,7 @@ namespace Projeto_Mercado_API.Repositories
         {
             return Update($"DELETE FROM Compras WHERE IdCompra = {idCompra}");
         }
-        public static CompraCompleta CCC(int IdCompra)
+        public static CompraCompleta ConsultarCompraCompleta(int IdCompra)
         {
             var resultado = Select($@"select 
                       C.IdCompra,
