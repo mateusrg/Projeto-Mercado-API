@@ -3,7 +3,7 @@
     public class Estoque
     {
         public int IdEstoque { get; set; }
-        public int IdTipoEstoque { get; set; }
+        public int IdTipoEstoque { get; set; }  
         public string Descricao { get; set; }
 
         public Estoque()

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Projeto_Mercado_API.Models;
+using Projeto_Mercado_API.Models.View_Models;
 using Projeto_Mercado_API.Repositories;
 
 namespace Projeto_Mercado_API.Controllers
@@ -53,6 +54,13 @@ namespace Projeto_Mercado_API.Controllers
         public ActionResult<List<Estoque>> ConsultarQuantProdutoEmTodosEstoques(string codBarras)
         {
             return Ok(EstoquesRepository.ConsultarQuantProdutoEmTodosEstoques(codBarras));
+        }
+
+        [HttpPost]
+        [Route("tipo-estoque")]
+        public ActionResult<List<VMEstoque>> ConsultarIdTipoEstoqueEstoqueTipoEstoque(VMEstoque estoque)
+        {
+            return Ok(EstoquesRepository.ConsultarIdTipoEstoqueEstoqueTipoEstoque(estoque.IdTipoEstoque, estoque.DescricaoEstoque));
         }
 
         [HttpPost]
