@@ -1,22 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\",
+  "WorkspaceRootPath": "C:\\Projetos git\\Projeto-Mercado-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\projetos git\\projeto-mercado-api\\repositories\\funcionariosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:repositories\\funcionariosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\models\\view models\\vwquantidadeprodutoestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:models\\view models\\vwquantidadeprodutoestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\models\\view models\\vwinformacoescompra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:models\\view models\\vwinformacoescompra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\users\\mateu\\onedrive\\documentos\\github\\projeto mercado api\\repositories\\estoquesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:repositories\\estoquesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\projetos git\\projeto-mercado-api\\repositories\\movimentacoesestoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:repositories\\movimentacoesestoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAPcAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-01-28T20:37:28.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EstoquesRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Repositories\\EstoquesRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\EstoquesRepository.cs",
-              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Repositories\\EstoquesRepository.cs",
-              "RelativeToolTip": "Repositories\\EstoquesRepository.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAgwEwAAAAJAAAAAAAAAA==",
+              "Title": "FuncionariosRepository.cs",
+              "DocumentMoniker": "C:\\Projetos git\\Projeto-Mercado-API\\Repositories\\FuncionariosRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\FuncionariosRepository.cs",
+              "ToolTip": "C:\\Projetos git\\Projeto-Mercado-API\\Repositories\\FuncionariosRepository.cs",
+              "RelativeToolTip": "Repositories\\FuncionariosRepository.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAowAgAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T19:33:00.63Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "VWInformacoesCompra.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Models\\View Models\\VWInformacoesCompra.cs",
-              "RelativeDocumentMoniker": "Models\\View Models\\VWInformacoesCompra.cs",
-              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Models\\View Models\\VWInformacoesCompra.cs",
-              "RelativeToolTip": "Models\\View Models\\VWInformacoesCompra.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T16:14:24.697Z",
+              "WhenOpened": "2025-02-27T17:21:13.808Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "VWQuantidadeProdutoEstoque.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Models\\View Models\\VWQuantidadeProdutoEstoque.cs",
-              "RelativeDocumentMoniker": "Models\\View Models\\VWQuantidadeProdutoEstoque.cs",
-              "ToolTip": "C:\\Users\\mateu\\OneDrive\\Documentos\\GitHub\\Projeto Mercado API\\Models\\View Models\\VWQuantidadeProdutoEstoque.cs",
-              "RelativeToolTip": "Models\\View Models\\VWQuantidadeProdutoEstoque.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Title": "MovimentacoesEstoqueRepository.cs",
+              "DocumentMoniker": "C:\\Projetos git\\Projeto-Mercado-API\\Repositories\\MovimentacoesEstoqueRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\MovimentacoesEstoqueRepository.cs",
+              "ToolTip": "C:\\Projetos git\\Projeto-Mercado-API\\Repositories\\MovimentacoesEstoqueRepository.cs",
+              "RelativeToolTip": "Repositories\\MovimentacoesEstoqueRepository.cs",
+              "ViewState": "AgIAADcBAAAAAAAAAAAswEABAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T20:29:32.786Z",
+              "WhenOpened": "2025-02-13T20:16:51.53Z",
               "EditorCaption": ""
             }
           ]

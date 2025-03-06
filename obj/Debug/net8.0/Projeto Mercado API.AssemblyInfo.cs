@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Projeto Mercado API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69e725c7fed640a897949db6ecff5ac6fc236eec")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a17c08426ce0df98d8b215ac2af969ce155ab279")]
 [assembly: System.Reflection.AssemblyProductAttribute("Projeto Mercado API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Projeto Mercado API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
