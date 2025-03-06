@@ -232,7 +232,7 @@ namespace Projeto_Mercado_API.Repositories
             return movimentacoesEstoque;
         }
 
-        public static int FazerMovimentacao(VWMovimentacaoEstoque movimentacaoEstoque)
+        public static int FazerMovimentacao(VMMovimentacoesEstoque movimentacaoEstoque)
         {
             var resultado = Select($@"
                 SELECT SUM(me.Quantidade) FROM MovimentacoesEstoque me
@@ -346,13 +346,13 @@ namespace Projeto_Mercado_API.Repositories
             return Update($"DELETE FROM MovimentacoesEstoque WHERE IdMovimentacaoEstoque = {idMovimentacaoEstoque}");
         }
 
-        public static List<VMTranserirEstoque> ConsultarPorEstoqueCompleto(int idEstoque)
+        public static List<VMTransferirEstoque> ConsultarPorEstoqueCompleto(int idEstoque)
         {
-            List<VMTranserirEstoque> movimentacoesEstoqueCompleto = new List<VMTranserirEstoque>();
+            List<VMTransferirEstoque> movimentacoesEstoqueCompleto = new List<VMTransferirEstoque>();
             var resultado = Select($"select \r\n E.IdEstoque,\r\n E.Descricao,\r\n E.IdTipoEstoque,\r\n TE.Descricao AS 'TipoEstoque',\r\n ME.IdMovimentacaoEstoque,\r\n ME.IdTipoMovimentacaoEstoque,\r\n Me.IdFuncionarioSolicitador,\r\n ME.idFuncionarioAutenticador,\r\n ME.IdProduto,\r\n ME.Quantidade,\r\n ME.DataHora,\r\n FA.IdFuncionario,\r\n FA.Nome,\r\n FS.IdFuncionario,\r\n FS.Nome,\r\n TME.IdTipoMovimentacaoEstoque,\r\n TME.Descricao,\r\n P.Descricao,\r\n P.CodBarras\r\n from MovimentacoesEstoque ME\r\n  join TiposEstoque TE on ME.IdTipoMovimentacaoEstoque = TE.IdTipoEstoque\r\n  join Estoques E on ME.IdEstoque = E.IdEstoque\r\n  join Funcionarios FA on ME.idFuncionarioAutenticador = FA.IdFuncionario\r\n  join Funcionarios FS on ME.IdFuncionarioSolicitador = FS.IdFuncionario\r\n  join TiposMovimentacaoEstoque TME ON ME.IdTipoMovimentacaoEstoque = TME.IdTipoMovimentacaoEstoque\r\n  join Produtos P on ME.IdProduto = P.IdProduto\r\n where E.IdEstoque = {idEstoque};");
             while (resultado.Read())
             {
-                var estoqueCompleto = new VMTranserirEstoque()
+                var estoqueCompleto = new VMTransferirEstoque()
                 {
                     IdEstoque = resultado.GetInt32(0),
                     DescricaoEstoque = resultado.GetString(1),
