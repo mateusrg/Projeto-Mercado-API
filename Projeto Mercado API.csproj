@@ -9,6 +9,9 @@
 
   <ItemGroup>
     <Compile Remove="Controllers\TiposMovimentacaoEstoque.cs" />
+    <Compile Remove="Models\View Models\Class.cs" />
+    <Compile Remove="Models\View Models\FiltroCompra.cs" />
+    <Compile Remove="Models\View Models\VMFiltroCompra.cs" />
     <Compile Remove="Repositories\Fornecedor.cs" />
   </ItemGroup>
 

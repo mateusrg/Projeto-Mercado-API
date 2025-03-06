@@ -1,6 +1,6 @@
 ﻿namespace Projeto_Mercado_API.Models.View_Models
 {
-    public class VMTranserirEstoque
+    public class VMTransferirEstoque
     {
         public int IdMovimentacaoEstoque { get; set; }
         public int IdTipoMovimentacaoEstoque { get; set; }

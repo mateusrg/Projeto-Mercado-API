@@ -28,6 +28,49 @@ namespace Projeto_Mercado_API.Repositories
             return movimentacoesEstoque;
         }
 
+        public static List<VMMovimentacaoEstoque> ListarTodosView()
+        {
+            List<VMMovimentacaoEstoque> movimentacoesEstoque = [];
+            var resultado = Select($@"SELECT * FROM MovimentacoesEstoque ME
+                    LEFT JOIN Estoques E ON ME.IdEstoque = E.IdEstoque
+                    LEFT JOIN TiposEstoque TE ON E.IdTipoEstoque = TE.IdTipoEstoque
+                    LEFT JOIN TiposMovimentacaoEstoque TME
+                    ON ME.IdTipoMovimentacaoEstoque = TME.IdTipoMovimentacaoEstoque
+                    LEFT JOIN Funcionarios F ON ME.idFuncionarioAutenticador = F.IdFuncionario
+                    LEFT JOIN Funcionarios Fu ON ME.IdFuncionarioSolicitador = Fu.IdFuncionario
+                    LEFT JOIN Produtos P ON ME.IdProduto = P.IdProduto");
+
+            while (resultado.Read())
+            {
+                var movimentacaoEstoque = new VMMovimentacaoEstoque()
+                {
+                    IdMovimentacaoEstoque = resultado.GetInt32(0),
+                    IdEstoque = resultado.GetInt32(1),
+                    DescricaoEstoque = resultado.GetString(10),
+                    IdTipoEstoque = resultado.GetInt32(9),
+                    DescricaoTipoEstoque = resultado.GetString(12),
+                    IdTipoMovimentacaoEstoque = resultado.GetInt32(13),
+                    DescricaoMovimentacaoEstoque = resultado.GetString(14),
+                    IdFuncionarioSolicitador = resultado.GetInt32(3),
+                    NomeFuncionarioSolicitador = resultado.GetString(21),
+                    SetorFuncionarioSolicitador = resultado.GetString(22),
+                    EmailFuncionarioSolicitador = resultado.GetString(23),
+                    IdFuncionarioAutenticador = resultado.GetInt32(4),
+                    NomeFuncionarioAutenticador = resultado.GetString(16),
+                    SetorFuncionarioAutenticador = resultado.GetString(17),
+                    EmailFuncionarioAutenticador = resultado.GetString(18),
+                    IdProduto = resultado.GetInt32(5),
+                    CodBarrasProduto = resultado.GetString(26),
+                    DescricaoProduto = resultado.GetString(27),
+                    Quantidade = resultado.GetInt32(6),
+                    DataHora = resultado.GetDateTime(7),
+                };
+                movimentacoesEstoque.Add(movimentacaoEstoque);
+            }
+            resultado.Close();
+            return movimentacoesEstoque;
+        }
+
         public static MovimentacaoEstoque? ConsultarPorId(int idMovimentacaoEstoque)
         {
             var resultado = Select($"SELECT * FROM MovimentacoesEstoque WHERE IdMovimentacaoEstoque = {idMovimentacaoEstoque}");
@@ -189,7 +232,7 @@ namespace Projeto_Mercado_API.Repositories
             return movimentacoesEstoque;
         }
 
-        public static int FazerMovimentacao(VWMovimentacaoEstoque movimentacaoEstoque)
+        public static int FazerMovimentacao(VMMovimentacoesEstoque movimentacaoEstoque)
         {
             var resultado = Select($@"
                 SELECT SUM(me.Quantidade) FROM MovimentacoesEstoque me
@@ -262,7 +305,7 @@ namespace Projeto_Mercado_API.Repositories
                 IdProduto = novaMovimentacaoEstoque.IdProduto,
                 Quantidade = Math.Abs(novaMovimentacaoEstoque.Quantidade) * -1,
                 DataHora = novaMovimentacaoEstoque.DataHora,
-                IdEstoque = 2,
+                IdEstoque = novaMovimentacaoEstoque.IdEstoque,
                 IdTipoMovimentacaoEstoque = 8
             };
             Cadastrar(movimentacao);
@@ -303,13 +346,13 @@ namespace Projeto_Mercado_API.Repositories
             return Update($"DELETE FROM MovimentacoesEstoque WHERE IdMovimentacaoEstoque = {idMovimentacaoEstoque}");
         }
 
-        public static List<VMTranserirEstoque> ConsultarPorEstoqueCompleto(int idEstoque)
+        public static List<VMTransferirEstoque> ConsultarPorEstoqueCompleto(int idEstoque)
         {
-            List<VMTranserirEstoque> movimentacoesEstoqueCompleto = new List<VMTranserirEstoque>();
+            List<VMTransferirEstoque> movimentacoesEstoqueCompleto = new List<VMTransferirEstoque>();
             var resultado = Select($"select \r\n E.IdEstoque,\r\n E.Descricao,\r\n E.IdTipoEstoque,\r\n TE.Descricao AS 'TipoEstoque',\r\n ME.IdMovimentacaoEstoque,\r\n ME.IdTipoMovimentacaoEstoque,\r\n Me.IdFuncionarioSolicitador,\r\n ME.idFuncionarioAutenticador,\r\n ME.IdProduto,\r\n ME.Quantidade,\r\n ME.DataHora,\r\n FA.IdFuncionario,\r\n FA.Nome,\r\n FS.IdFuncionario,\r\n FS.Nome,\r\n TME.IdTipoMovimentacaoEstoque,\r\n TME.Descricao,\r\n P.Descricao,\r\n P.CodBarras\r\n from MovimentacoesEstoque ME\r\n  join TiposEstoque TE on ME.IdTipoMovimentacaoEstoque = TE.IdTipoEstoque\r\n  join Estoques E on ME.IdEstoque = E.IdEstoque\r\n  join Funcionarios FA on ME.idFuncionarioAutenticador = FA.IdFuncionario\r\n  join Funcionarios FS on ME.IdFuncionarioSolicitador = FS.IdFuncionario\r\n  join TiposMovimentacaoEstoque TME ON ME.IdTipoMovimentacaoEstoque = TME.IdTipoMovimentacaoEstoque\r\n  join Produtos P on ME.IdProduto = P.IdProduto\r\n where E.IdEstoque = {idEstoque};");
             while (resultado.Read())
             {
-                var estoqueCompleto = new VMTranserirEstoque()
+                var estoqueCompleto = new VMTransferirEstoque()
                 {
                     IdEstoque = resultado.GetInt32(0),
                     DescricaoEstoque = resultado.GetString(1),

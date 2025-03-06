@@ -128,6 +128,31 @@ namespace Projeto_Mercado_API.Repositories
             return quantidadeProdutosTodosEstoques;
         }
 
+        public static List<VMEstoque> ConsultarIdTipoEstoqueEstoqueTipoEstoque(int? idTipoEstoque, string? descricao)
+        {
+            var estoques = new List<VMEstoque>();
+            var resultado = Select($@"SELECT 
+                            e.IdEstoque, e.Descricao,
+                            t.Descricao FROM Estoques e
+                            JOIN TiposEstoque t
+                            ON e.IdTipoEstoque = t.IdTipoEstoque
+                            WHERE 1=1
+                            {(idTipoEstoque == null ? "" : $"AND e.IdTipoEstoque = {idTipoEstoque}")}
+                            {(descricao == null ? "" : $"AND e.Descricao LIKE '%{descricao}%'")}");
+            while (resultado.Read())
+            {
+                var estoque = new VMEstoque()
+                {
+                    IdEstoque = resultado.GetInt32(0),
+                    DescricaoEstoque = resultado.GetString(1),
+                    DescricaoTipoEstoque = resultado.GetString(2),
+                };
+                estoques.Add(estoque);
+            }
+            resultado.Close();
+            return estoques;
+        }
+
         public static int Cadastrar(Estoque novoEstoque)
         {
             var resultado = Update($@"
