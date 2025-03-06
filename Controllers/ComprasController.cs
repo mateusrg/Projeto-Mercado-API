@@ -76,6 +76,14 @@ namespace Projeto_Mercado_API.Controllers
         }
 
         [HttpPost]
+        [Route("tudo")]
+        public ActionResult<List<VMCompra>> ConsultarPorTudo(FiltroParaCompra compra)
+        {
+            var resultado = ComprasRepository.ConsultarPorTudo(compra);
+            return Ok(resultado);
+        }
+
+        [HttpPost]
         public ActionResult<int> Cadastrar(Compra novaCompra)
         {
             return Ok(ComprasRepository.Cadastrar(novaCompra));
@@ -124,10 +132,10 @@ namespace Projeto_Mercado_API.Controllers
         }
         
         [HttpGet]
-        [Route("CCC/{IdCompraCompleta}")]
-        public ActionResult<CompraCompleta> CCC(int IdCompraCompleta)
+        [Route("ConsultarCompraCompleta/{IdCompraCompleta}")]
+        public ActionResult<CompraCompleta> ConsultarCompraCompleta(int IdCompraCompleta)
         {
-            var resultado = ComprasRepository.CCC(IdCompraCompleta);
+            var resultado = ComprasRepository.ConsultarCompraCompleta(IdCompraCompleta);
             if (resultado == null) { return BadRequest("Compra não encontrada.");}
                 
             return Ok(resultado);

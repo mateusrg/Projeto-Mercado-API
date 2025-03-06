@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "7+vJ1dNsWnReIFMc84lpclT+2xVIMPPsDUwtbVF69sE=",
+  "Hash": "mxeIK0wDXD28zPjYAwcJXvDqW7Cqy6w+T/jWoByHLpE=",
   "Source": "Projeto Mercado API",
   "BasePath": "_content/Projeto Mercado API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

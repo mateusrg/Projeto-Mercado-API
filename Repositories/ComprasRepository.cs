@@ -10,7 +10,8 @@ namespace Projeto_Mercado_API.Repositories
         {
             List<InformacoesCompra> compras = new List<InformacoesCompra>();
             var resultado = Select($@"
-                SELECT C.IdCompra, F.Nome, P.Descricao, C.Data, C.Quantidade FROM Compras C
+                SELECT C.IdCompra, F.IdFornecedor, P.IdProduto, F.Nome, P.Descricao, C.Data, C.Quantidade
+                FROM Compras C
                 JOIN Fornecedores F ON C.IdFornecedor = F.IdFornecedor
                 JOIN Produtos P ON C.IdProduto = P.IdProduto;
                 ");
@@ -19,10 +20,12 @@ namespace Projeto_Mercado_API.Repositories
                 var compra = new InformacoesCompra()
                 {
                     IdCompra = resultado.GetInt32(0),
-                    Fornecedor = resultado.GetString(1),
-                    Produto = resultado.GetString(2),
-                    Data = resultado.GetDateTime(3).ToString("dd/MM/yyyy"),
-                    Quantidade = resultado.GetInt32(4)
+                    IdFornecedor = resultado.GetInt32(1),
+                    IdProduto = resultado.GetInt32(2),
+                    Fornecedor = resultado.GetString(3),
+                    Produto = resultado.GetString(4),
+                    Data = resultado.GetDateTime(5).ToString("dd/MM/yyyy"),
+                    Quantidade = resultado.GetInt32(6)
                 };
                 compras.Add(compra);
             }
@@ -155,6 +158,41 @@ namespace Projeto_Mercado_API.Repositories
             return compras;
         }
 
+        public static List<VMCompra> ConsultarPorTudo(FiltroParaCompra filtroCompra)
+        {
+            List<VMCompra> compras = [];
+            var resultado = Select($@"SELECT * FROM Compras c
+                LEFT JOIN Produtos p
+                ON c.IdProduto = p.IdProduto
+                LEFT JOIN Fornecedores f
+                ON c.IdFornecedor = f.IdFornecedor
+                WHERE 1=1
+                {(filtroCompra.DataInicio == null ? "" : $"AND Data >= '{filtroCompra.DataInicio}'")}
+                {(filtroCompra.DataFim == null ? "" : $"AND Data <= '{filtroCompra.DataFim}'")}
+                {(filtroCompra.QuantMinima == null ? "" : $"AND c.Quantidade >= {filtroCompra.QuantMinima}")}
+                {(filtroCompra.QuantMaxima == null ? "" : $"AND c.Quantidade <= {filtroCompra.QuantMaxima}")}
+                {(filtroCompra.IdProduto == null ? "": $"AND c.IdProduto = {filtroCompra.IdProduto}")}
+                {(filtroCompra.IdFornecedor == null ? "" : $"AND c.IdFornecedor = {filtroCompra.IdFornecedor}")}
+                ");
+            while (resultado.Read())
+            {
+                var compra = new VMCompra()
+                {
+                    IdCompra = resultado.GetInt32(0),
+                    IdFornecedor = resultado.GetInt32(1),
+                    IdProduto = resultado.GetInt32(2),
+                    NomeFornecedor = resultado.GetString(10),
+                    CNPJFornecedor = resultado.GetString(9),
+                    DescricaoProduto = resultado.GetString(7),
+                    Data = resultado.GetDateTime(3),
+                    Quantidade = resultado.GetInt32(4)
+                };
+                compras.Add(compra);
+            }
+            resultado.Close();
+            return compras;
+        }
+
         public static int Cadastrar(Compra novaCompra)
         {
             var resultado = Update($@"
@@ -171,7 +209,7 @@ namespace Projeto_Mercado_API.Repositories
                 IdFornecedor = {compraAlterar.IdFornecedor},
                 IdProduto = {compraAlterar.IdProduto},
                 Data = '{compraAlterar.Data}',
-                Quantidade = {compraAlterar.Quantidade},
+                Quantidade = {compraAlterar.Quantidade}
                 WHERE IdCompra = {compraAlterar.IdCompra}
                 ");
             return resultado;
@@ -181,7 +219,7 @@ namespace Projeto_Mercado_API.Repositories
         {
             return Update($"DELETE FROM Compras WHERE IdCompra = {idCompra}");
         }
-        public static CompraCompleta CCC(int IdCompra)
+        public static CompraCompleta ConsultarCompraCompleta(int IdCompra)
         {
             var resultado = Select($@"select 
                       C.IdCompra,

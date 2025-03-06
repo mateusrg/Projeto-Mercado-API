@@ -3,6 +3,8 @@
     public class InformacoesCompra
     {
         public int IdCompra { get; set; }
+        public int IdFornecedor { get; set; }
+        public int IdProduto { get; set; }
         public string Fornecedor { get; set; }
         public string Produto { get; set; }
         public string Data { get; set; }
