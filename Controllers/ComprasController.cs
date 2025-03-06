@@ -77,7 +77,7 @@ namespace Projeto_Mercado_API.Controllers
 
         [HttpPost]
         [Route("tudo")]
-        public ActionResult<List<Compra>> ConsultarPorTudo(FiltroParaCompra compra)
+        public ActionResult<List<VMCompra>> ConsultarPorTudo(FiltroParaCompra compra)
         {
             var resultado = ComprasRepository.ConsultarPorTudo(compra);
             return Ok(resultado);

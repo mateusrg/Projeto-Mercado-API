@@ -76,3 +76,42 @@ C:\Users\leoan\OneDrive\Documentos\GitHub\Projeto-Mercado-API\obj\Debug\net8.0\r
 C:\Users\leoan\OneDrive\Documentos\GitHub\Projeto-Mercado-API\obj\Debug\net8.0\Projeto Mercado API.pdb
 C:\Users\leoan\OneDrive\Documentos\GitHub\Projeto-Mercado-API\obj\Debug\net8.0\Projeto Mercado API.genruntimeconfig.cache
 C:\Users\leoan\OneDrive\Documentos\GitHub\Projeto-Mercado-API\obj\Debug\net8.0\ref\Projeto Mercado API.dll
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\appsettings.Development.json
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\appsettings.json
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\Projeto Mercado API.exe
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\Projeto Mercado API.deps.json
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\Projeto Mercado API.runtimeconfig.json
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\Projeto Mercado API.dll
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\Projeto Mercado API.pdb
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\dev\github\Projeto-Mercado-API\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\Projeto Mercado API.csproj.AssemblyReference.cache
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\Projeto Mercado API.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\Projeto Mercado API.AssemblyInfoInputs.cache
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\Projeto Mercado API.AssemblyInfo.cs
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\Projeto Mercado API.csproj.CoreCompileInputs.cache
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\Projeto Mercado API.MvcApplicationPartsAssemblyInfo.cs
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\Projeto Mercado API.MvcApplicationPartsAssemblyInfo.cache
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\Projeto Mercado API.sourcelink.json
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\staticwebassets.build.json
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\staticwebassets.development.json
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\staticwebassets\msbuild.Projeto Mercado API.Microsoft.AspNetCore.StaticWebAssets.props
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\staticwebassets\msbuild.build.Projeto Mercado API.props
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Projeto Mercado API.props
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Projeto Mercado API.props
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\staticwebassets.pack.json
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\scopedcss\bundle\Projeto Mercado API.styles.css
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\Projeto .F605D91E.Up2Date
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\Projeto Mercado API.dll
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\refint\Projeto Mercado API.dll
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\Projeto Mercado API.pdb
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\Projeto Mercado API.genruntimeconfig.cache
+C:\dev\github\Projeto-Mercado-API\obj\Debug\net8.0\ref\Projeto Mercado API.dll

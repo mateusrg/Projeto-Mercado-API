@@ -99,32 +99,6 @@
   },
   {
     "ContainingType": "Projeto_Mercado_API.Controllers.ComprasController",
-    "Method": "CCC",
-    "RelativePath": "Compras/CCC/{IdCompraCompleta}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "IdCompraCompleta",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Projeto_Mercado_API.Models.View_Models.CompraCompleta",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Projeto_Mercado_API.Controllers.ComprasController",
     "Method": "Comprar",
     "RelativePath": "Compras/Compra",
     "HttpMethod": "POST",
@@ -140,6 +114,32 @@
     "ReturnTypes": [
       {
         "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.ComprasController",
+    "Method": "ConsultarCompraCompleta",
+    "RelativePath": "Compras/ConsultarCompraCompleta/{IdCompraCompleta}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdCompraCompleta",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Projeto_Mercado_API.Models.View_Models.CompraCompleta",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -321,6 +321,32 @@
     "ReturnTypes": [
       {
         "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.ComprasController",
+    "Method": "ConsultarPorTudo",
+    "RelativePath": "Compras/tudo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "compra",
+        "Type": "Projeto_Mercado_API.Models.View_Models.FiltroParaCompra",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.View_Models.VMCompra, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1231,7 +1257,7 @@
     "Parameters": [
       {
         "Name": "movimentacaoEstoque",
-        "Type": "Projeto_Mercado_API.Models.View_Models.VWMovimentacaoEstoque",
+        "Type": "Projeto_Mercado_API.Models.View_Models.VMMovimentacoesEstoque",
         "IsRequired": true
       }
     ],
@@ -1316,6 +1342,26 @@
     "ReturnTypes": [
       {
         "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
+    "Method": "ListarTodosView",
+    "RelativePath": "MovimentacoesEstoque/view",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.MovimentacaoEstoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

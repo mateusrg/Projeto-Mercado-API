@@ -16,6 +16,14 @@ namespace Projeto_Mercado_API.Controllers
         }
 
         [HttpGet]
+        [Route("view")]
+        public ActionResult<List<MovimentacaoEstoque>> ListarTodosView()
+        {
+            return Ok(MovimentacoesEstoqueRepository.ListarTodosView());
+        }
+
+
+        [HttpGet]
         [Route("id/{idMovimentacaoEstoque}")]
         public ActionResult<MovimentacaoEstoque?> ConsultarPorId(int idMovimentacaoEstoque)
         {
@@ -101,7 +109,7 @@ namespace Projeto_Mercado_API.Controllers
 
         [HttpPost]
         [Route("movimentarProdutoEntreEstoques")]
-        public ActionResult<string> FazerMovimentacao(VWMovimentacaoEstoque movimentacaoEstoque)
+        public ActionResult<string> FazerMovimentacao(VMMovimentacoesEstoque movimentacaoEstoque)
         {
             if (movimentacaoEstoque.idEstoqueOrigem <= 0)
             {

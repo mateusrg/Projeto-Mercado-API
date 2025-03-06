@@ -1,6 +1,6 @@
 ﻿namespace Projeto_Mercado_API.Models.View_Models
 {
-    public class VWMovimentacaoEstoque
+    public class VMMovimentacoesEstoque
     {
         public int idProduto { get; set; }
         public int quantidade { get; set; }
@@ -12,7 +12,7 @@
         public int idTipoMovimentacaoDestino { get; set; }
         public DateTime dataHora { get; set; }
 
-        public VWMovimentacaoEstoque()
+        public VMMovimentacoesEstoque()
         {
             idProduto = 0;
             quantidade = 0;
