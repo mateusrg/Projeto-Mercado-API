@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\dev\\github\\Projeto-Mercado-API\\",
+  "WorkspaceRootPath": "C:\\Projetos git\\Projeto-Mercado-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\dev\\github\\projeto-mercado-api\\controllers\\movimentacoesestoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:controllers\\movimentacoesestoquecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\projetos git\\projeto-mercado-api\\repositories\\funcionariosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:repositories\\funcionariosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\dev\\github\\projeto-mercado-api\\repositories\\movimentacoesestoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|c:\\projetos git\\projeto-mercado-api\\repositories\\movimentacoesestoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{63C28C2C-DFA0-40D0-9576-771C41E4BA11}|Projeto Mercado API.csproj|solutionrelative:repositories\\movimentacoesestoquerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -23,27 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MovimentacoesEstoqueController.cs",
-              "DocumentMoniker": "C:\\dev\\github\\Projeto-Mercado-API\\Controllers\\MovimentacoesEstoqueController.cs",
-              "RelativeDocumentMoniker": "Controllers\\MovimentacoesEstoqueController.cs",
-              "ToolTip": "C:\\dev\\github\\Projeto-Mercado-API\\Controllers\\MovimentacoesEstoqueController.cs",
-              "RelativeToolTip": "Controllers\\MovimentacoesEstoqueController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAXAAAAAAAAAA==",
+              "Title": "FuncionariosRepository.cs",
+              "DocumentMoniker": "C:\\Projetos git\\Projeto-Mercado-API\\Repositories\\FuncionariosRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\FuncionariosRepository.cs",
+              "ToolTip": "C:\\Projetos git\\Projeto-Mercado-API\\Repositories\\FuncionariosRepository.cs",
+              "RelativeToolTip": "Repositories\\FuncionariosRepository.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAowAgAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T20:50:08.34Z",
+              "WhenOpened": "2025-02-27T17:21:13.808Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MovimentacoesEstoqueRepository.cs",
-              "DocumentMoniker": "C:\\dev\\github\\Projeto-Mercado-API\\Repositories\\MovimentacoesEstoqueRepository.cs",
+              "DocumentMoniker": "C:\\Projetos git\\Projeto-Mercado-API\\Repositories\\MovimentacoesEstoqueRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\MovimentacoesEstoqueRepository.cs",
-              "ToolTip": "C:\\dev\\github\\Projeto-Mercado-API\\Repositories\\MovimentacoesEstoqueRepository.cs",
+              "ToolTip": "C:\\Projetos git\\Projeto-Mercado-API\\Repositories\\MovimentacoesEstoqueRepository.cs",
               "RelativeToolTip": "Repositories\\MovimentacoesEstoqueRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADcBAAAAAAAAAAAswEABAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T20:50:01.317Z",
+              "WhenOpened": "2025-02-13T20:16:51.53Z",
               "EditorCaption": ""
             }
           ]

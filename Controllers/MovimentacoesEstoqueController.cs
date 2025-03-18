@@ -165,5 +165,15 @@ namespace Projeto_Mercado_API.Controllers
                 return BadRequest("estoque não encontrado.");
             return Ok(movimentacaoEstoque);
         }
+        [HttpGet]
+        [Route("produtoCompleto/{idProduto}")]
+        public ActionResult<List<MovimentacaoEstoque>> ConsultarPorProdutoCompleto(int idProduto)
+        {
+            var movimentacaoEstoque = MovimentacoesEstoqueRepository.ConsultarPorProdutoCompleto(idProduto);
+            if (movimentacaoEstoque == null)
+                return BadRequest("produto não encontrado.");
+            return Ok(movimentacaoEstoque);
+        }
     }
+
 }

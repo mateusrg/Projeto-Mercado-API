@@ -331,32 +331,6 @@
     ]
   },
   {
-    "ContainingType": "Projeto_Mercado_API.Controllers.ComprasController",
-    "Method": "ConsultarPorTudo",
-    "RelativePath": "Compras/tudo",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "compra",
-        "Type": "Projeto_Mercado_API.Models.View_Models.FiltroParaCompra",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.View_Models.VMCompra, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "Projeto_Mercado_API.Controllers.EstoquesController",
     "Method": "ListarTodos",
     "RelativePath": "Estoques",
@@ -1257,7 +1231,7 @@
     "Parameters": [
       {
         "Name": "movimentacaoEstoque",
-        "Type": "Projeto_Mercado_API.Models.View_Models.VMMovimentacoesEstoque",
+        "Type": "Projeto_Mercado_API.Models.View_Models.VWMovimentacaoEstoque",
         "IsRequired": true
       }
     ],
@@ -1342,26 +1316,6 @@
     "ReturnTypes": [
       {
         "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Projeto_Mercado_API.Controllers.MovimentacoesEstoqueController",
-    "Method": "ListarTodosView",
-    "RelativePath": "MovimentacoesEstoque/view",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[Projeto_Mercado_API.Models.MovimentacaoEstoque, Projeto Mercado API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
