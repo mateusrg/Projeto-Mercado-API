@@ -38,7 +38,8 @@ namespace Projeto_Mercado_API.Repositories
                     ON ME.IdTipoMovimentacaoEstoque = TME.IdTipoMovimentacaoEstoque
                     LEFT JOIN Funcionarios F ON ME.idFuncionarioAutenticador = F.IdFuncionario
                     LEFT JOIN Funcionarios Fu ON ME.IdFuncionarioSolicitador = Fu.IdFuncionario
-                    LEFT JOIN Produtos P ON ME.IdProduto = P.IdProduto");
+                    LEFT JOIN Produtos P ON ME.IdProduto = P.IdProduto
+                    ORDER BY ME.IdMovimentacaoEstoque DESC");
 
             while (resultado.Read())
             {

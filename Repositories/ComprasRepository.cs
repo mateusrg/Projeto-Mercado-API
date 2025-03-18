@@ -6,26 +6,28 @@ namespace Projeto_Mercado_API.Repositories
 {
     public class ComprasRepository : RepositoryBase
     {
-        public static List<InformacoesCompra> ListarTodosView()
+        public static List<VMCompra> ListarTodosView()
         {
-            List<InformacoesCompra> compras = new List<InformacoesCompra>();
+            List<VMCompra> compras = [];
             var resultado = Select($@"
-                SELECT C.IdCompra, F.IdFornecedor, P.IdProduto, F.Nome, P.Descricao, C.Data, C.Quantidade
+                SELECT *
                 FROM Compras C
                 JOIN Fornecedores F ON C.IdFornecedor = F.IdFornecedor
                 JOIN Produtos P ON C.IdProduto = P.IdProduto;
                 ");
             while (resultado.Read())
             {
-                var compra = new InformacoesCompra()
+                var compra = new VMCompra()
                 {
                     IdCompra = resultado.GetInt32(0),
                     IdFornecedor = resultado.GetInt32(1),
                     IdProduto = resultado.GetInt32(2),
-                    Fornecedor = resultado.GetString(3),
-                    Produto = resultado.GetString(4),
-                    Data = resultado.GetDateTime(5).ToString("dd/MM/yyyy"),
-                    Quantidade = resultado.GetInt32(6)
+                    NomeFornecedor = resultado.GetString(7),
+                    CNPJFornecedor = resultado.GetString(6),
+                    CodBarrasProduto = resultado.GetString(9),
+                    DescricaoProduto = resultado.GetString(10),
+                    Data = resultado.GetDateTime(3),
+                    Quantidade = resultado.GetInt32(4)
                 };
                 compras.Add(compra);
             }
@@ -173,6 +175,7 @@ namespace Projeto_Mercado_API.Repositories
                 {(filtroCompra.QuantMaxima == null ? "" : $"AND c.Quantidade <= {filtroCompra.QuantMaxima}")}
                 {(filtroCompra.IdProduto == null ? "": $"AND c.IdProduto = {filtroCompra.IdProduto}")}
                 {(filtroCompra.IdFornecedor == null ? "" : $"AND c.IdFornecedor = {filtroCompra.IdFornecedor}")}
+                ORDER BY c.IdCompra DESC
                 ");
             while (resultado.Read())
             {
@@ -183,6 +186,7 @@ namespace Projeto_Mercado_API.Repositories
                     IdProduto = resultado.GetInt32(2),
                     NomeFornecedor = resultado.GetString(10),
                     CNPJFornecedor = resultado.GetString(9),
+                    CodBarrasProduto = resultado.GetString(6),
                     DescricaoProduto = resultado.GetString(7),
                     Data = resultado.GetDateTime(3),
                     Quantidade = resultado.GetInt32(4)

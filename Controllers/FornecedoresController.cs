@@ -48,6 +48,14 @@ namespace Projeto_Mercado_API.Controllers
             return Ok(FornecedoresRepository.ConsultarPorNomeECNPJ(texto));
         }
 
+        [HttpGet]
+        [Route("listarComprasFornecedor/{idFornecedor}")]
+        public ActionResult<List<Fornecedor>> ListarComprasDoFornecedor(int idFornecedor)
+        {
+            return Ok(FornecedoresRepository.ListarComprasDoFornecedor(idFornecedor));
+        }
+
+
         [HttpPost]
         public ActionResult<int> Cadastrar(Fornecedor novoFornecedor)
         {

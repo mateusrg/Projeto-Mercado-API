@@ -50,6 +50,13 @@ namespace Projeto_Mercado_API.Controllers
         }
 
         [HttpGet]
+        [Route("movimentacoesRecentes/{idEstoque}")]
+        public ActionResult<List<Estoque>> ListarMovimentacoesRecentes(int idEstoque)
+        {
+            return Ok(EstoquesRepository.ListarMovimentacoesRecentes(idEstoque));
+        }
+
+        [HttpGet]
         [Route("quantidadeProdutoEmTodosEstoques/{codBarras}")]
         public ActionResult<List<Estoque>> ConsultarQuantProdutoEmTodosEstoques(string codBarras)
         {

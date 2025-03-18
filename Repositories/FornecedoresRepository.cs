@@ -1,4 +1,5 @@
 ﻿using Projeto_Mercado_API.Models;
+using Projeto_Mercado_API.Models.View_Models;
 
 namespace Projeto_Mercado_API.Repositories
 {
@@ -21,6 +22,38 @@ namespace Projeto_Mercado_API.Repositories
             resultado.Close();
             return fornecedores;
         }
+
+        public static List<VMCompra> ListarComprasDoFornecedor(int idFornecedor)
+        {
+            List<VMCompra> compras = [];
+            var resultado = Select($@"
+                SELECT *
+                FROM Compras C
+                JOIN Fornecedores F ON C.IdFornecedor = F.IdFornecedor
+                JOIN Produtos P ON C.IdProduto = P.IdProduto
+                WHERE C.IdFornecedor = {idFornecedor}
+                ORDER BY C.IdCompra DESC
+                ");
+            while (resultado.Read())
+            {
+                var compra = new VMCompra()
+                {
+                    IdCompra = resultado.GetInt32(0),
+                    IdFornecedor = resultado.GetInt32(1),
+                    IdProduto = resultado.GetInt32(2),
+                    NomeFornecedor = resultado.GetString(7),
+                    CNPJFornecedor = resultado.GetString(6),
+                    CodBarrasProduto = resultado.GetString(9),
+                    DescricaoProduto = resultado.GetString(10),
+                    Data = resultado.GetDateTime(3),
+                    Quantidade = resultado.GetInt32(4)
+                };
+                compras.Add(compra);
+            }
+            resultado.Close();
+            return compras;
+        }
+
 
         public static Fornecedor? ConsultarPorId(int idFornecedor)
         {

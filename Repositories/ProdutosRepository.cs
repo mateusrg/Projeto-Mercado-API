@@ -98,6 +98,29 @@ namespace Projeto_Mercado_API.Repositories
             return produtos;
         }
 
+        public static List<Produto> ConsultarPorTudo(string texto)
+        {
+            List<Produto> produtos = new List<Produto>();
+            var resultado = Select($@"SELECT * 
+                                    FROM Produtos 
+                                    WHERE 
+                                    {(int.TryParse(texto, out _) ? "IdProduto = {texto} OR" : "")}
+                                    Descricao LIKE '%{texto}%' OR
+                                    CodBarras LIKE '%{texto}%'");
+            while (resultado.Read())
+            {
+                var produto = new Produto()
+                {
+                    IdProduto = resultado.GetInt32(0),
+                    CodBarras = resultado.GetString(1),
+                    Descricao = resultado.GetString(2)
+                };
+                produtos.Add(produto);
+            }
+            resultado.Close();
+            return produtos;
+        }
+
         public static int ExcluirPorId(int idProduto)
         {
             try

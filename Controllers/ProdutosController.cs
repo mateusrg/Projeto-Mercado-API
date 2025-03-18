@@ -15,6 +15,13 @@ namespace Projeto_Mercado_API.Controllers
         }
 
         [HttpGet]
+        [Route("tudo/{texto}")]
+        public ActionResult<List<Produto>> ConsultarPorTudo(string texto)
+        {
+            return Ok(ProdutosRepository.ConsultarPorTudo(texto));
+        }
+
+        [HttpGet]
         [Route("id/{idProduto}")]
         public ActionResult<Produto?> ConsultarPorId(int idProduto)
         {
