@@ -212,7 +212,7 @@ namespace Projeto_Mercado_API.Repositories
             var resultado = Update($@"
                 UPDATE Estoques SET
                 IdTipoEstoque = {estoqueAlterar.IdTipoEstoque},
-                Descricao = '{estoqueAlterar.Descricao}',
+                Descricao = '{estoqueAlterar.Descricao}'
                 WHERE IdEstoque = {estoqueAlterar.IdEstoque}
                 ");
             return resultado;
