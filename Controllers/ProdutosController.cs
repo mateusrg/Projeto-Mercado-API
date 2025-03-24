@@ -55,6 +55,20 @@ namespace Projeto_Mercado_API.Controllers
             return Ok(ProdutosRepository.ConsultarPorDescricaoECodBarras(texto));
         }
 
+        [HttpGet]
+        [Route("quantPorEstoque/{idProduto}")]
+        public ActionResult<List<Produto>> ListarQuantidadePorEstoque(int idProduto)
+        {
+            return Ok(ProdutosRepository.ListarQuantidadePorEstoque(idProduto));
+        }
+
+        [HttpGet]
+        [Route("movimentacoesRecentes/{idProduto}")]
+        public ActionResult<List<Produto>> ListarMovimentacoesRecentes(int idProduto)
+        {
+            return Ok(ProdutosRepository.ListarMovimentacoesRecentes(idProduto));
+        }
+
         [HttpPost]
         public ActionResult<int> Cadastrar(Produto novoProduto)
         {

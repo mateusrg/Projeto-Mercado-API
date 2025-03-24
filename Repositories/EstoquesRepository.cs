@@ -22,6 +22,28 @@ namespace Projeto_Mercado_API.Repositories
             resultado.Close();
             return estoques;
         }
+        
+        public static List<VMEstoque> ListarTodosView()
+        {
+            List<VMEstoque> estoques = [];
+            var resultado = Select($@"SELECT * FROM Estoques e
+                LEFT JOIN TiposEstoque t
+                ON e.IdTipoEstoque = t.IdTipoEstoque");
+            while (resultado.Read())
+            {
+                var estoque = new VMEstoque()
+                {
+                    IdEstoque = resultado.GetInt32(0),
+                    IdTipoEstoque = resultado.GetInt32(1),
+                    DescricaoEstoque = resultado.GetString(2),
+                    DescricaoTipoEstoque = resultado.GetString(4),
+                };
+                estoques.Add(estoque);
+            }
+            resultado.Close();
+            return estoques;
+        }
+
         public static Estoque? ConsultarPorId(int idEstoque)
         {
             var resultado = Select($"SELECT * FROM Estoques WHERE IdEstoque = {idEstoque}");
@@ -40,22 +62,26 @@ namespace Projeto_Mercado_API.Repositories
             return null;
         }
 
-        public static Estoque? ConsultarPorTipoEstoque(int idTipoEstoque)
+        public static List<VMEstoque> ConsultarPorTipoEstoque(int idTipoEstoque)
         {
-            var resultado = Select($"SELECT * FROM Estoques WHERE IdTipoEstoque = {idTipoEstoque}");
-            if (resultado.Read())
+            List<VMEstoque> estoques = [];
+            var resultado = Select($@"SELECT * FROM Estoques e
+                LEFT JOIN TiposEstoque t
+                ON e.IdTipoEstoque = t.IdTipoEstoque
+                WHERE e.IdTipoEstoque = {idTipoEstoque}");
+            while (resultado.Read())
             {
-                var estoque = new Estoque()
+                var estoque = new VMEstoque()
                 {
                     IdEstoque = resultado.GetInt32(0),
                     IdTipoEstoque = resultado.GetInt32(1),
-                    Descricao = resultado.GetString(2)
+                    DescricaoEstoque = resultado.GetString(2),
+                    DescricaoTipoEstoque = resultado.GetString(4),
                 };
-                resultado.Close();
-                return estoque;
+                estoques.Add(estoque);
             }
             resultado.Close();
-            return null;
+            return estoques;
         }
 
         public static List<Estoque> ConsultarPorDescricao(string descricao)

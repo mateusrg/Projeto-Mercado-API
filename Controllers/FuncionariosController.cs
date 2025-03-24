@@ -15,6 +15,14 @@ namespace Projeto_Mercado_API.Controllers
         }
 
         [HttpGet]
+        [Route("movimentacoesFuncionario/{idFuncionario}")]
+        public ActionResult<List<Funcionario>> ListarMovimentacoesDoFuncionario(int idFuncionario)
+        {
+            return Ok(FuncionariosRepository.ListarMovimentacoesDoFuncionario(idFuncionario));
+        }
+
+
+        [HttpGet]
         [Route("id/{idFuncionario}")]
         public ActionResult<Funcionario?> ConsultarPorId(int idFuncionario)
         {

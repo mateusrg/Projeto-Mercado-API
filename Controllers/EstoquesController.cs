@@ -27,12 +27,10 @@ namespace Projeto_Mercado_API.Controllers
 
         [HttpGet]
         [Route("tipoEstoque/{idTipoEstoque}")]
-        public ActionResult<Estoque?> ConsultarPorTipoEstoque(int idTipoEstoque)
+        public ActionResult<List<VMEstoque>> ConsultarPorTipoEstoque(int idTipoEstoque)
         {
-            var estoque = EstoquesRepository.ConsultarPorTipoEstoque(idTipoEstoque);
-            if (estoque == null)
-                return BadRequest("Estoque não encontrado.");
-            return Ok(estoque);
+            var estoques = EstoquesRepository.ConsultarPorTipoEstoque(idTipoEstoque);
+            return Ok(estoques);
         }
 
         [HttpGet]

@@ -31,6 +31,13 @@ namespace Projeto_Mercado_API.Controllers
             return Ok(TiposMovimentacaoEstoqueRepository.ConsultarPorDescricao(descricao));
         }
 
+        [HttpGet]
+        [Route("movimentacoes/{idTipoMovimentacaoEstoque}")]
+        public ActionResult<List<TipoMovimentacaoEstoque>> ListarMovimentacoesPorTipo(int idTipoMovimentacaoEstoque)
+        {
+            return Ok(TiposMovimentacaoEstoqueRepository.ListarMovimentacoesPorTipo(idTipoMovimentacaoEstoque));
+        }
+
         [HttpPost]
         public ActionResult<int> Cadastrar(TipoMovimentacaoEstoque novoTipoMovimentacaoEstoque)
         {
