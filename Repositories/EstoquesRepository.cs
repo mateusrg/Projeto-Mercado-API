@@ -107,12 +107,13 @@ namespace Projeto_Mercado_API.Repositories
             List<VWQuantidadeProdutoEstoque> quantidadeProdutosEstoque = [];
             var resultado = Select($@"
                 SELECT p.Descricao AS Produto,
-                SUM(me.Quantidade) AS Quantidade
+                SUM(me.Quantidade) AS Quantidade,
+                p.IdProduto, p.CodBarras
                 FROM MovimentacoesEstoque me
                 LEFT JOIN Produtos p ON me.IdProduto = p.IdProduto
                 LEFT JOIN Estoques e ON e.IdEstoque = me.IdEstoque
                 WHERE me.IdEstoque = {idEstoque}
-                GROUP BY p.Descricao;
+                GROUP BY p.Descricao, p.IdProduto, p.CodBarras
                 ");
             while (resultado.Read())
             {
@@ -120,6 +121,8 @@ namespace Projeto_Mercado_API.Repositories
                 {
                     Produto = resultado.GetString(0),
                     Quantidade = resultado.GetInt32(1),
+                    IdProduto = resultado.GetInt32(2),
+                    CodBarras = resultado.GetString(3)
                 };
                 quantidadeProdutosEstoque.Add(quantidadeProdutoEstoque);
             }
@@ -202,9 +205,8 @@ namespace Projeto_Mercado_API.Repositories
         public static List<VMEstoque> ConsultarIdTipoEstoqueEstoqueTipoEstoque(int? idTipoEstoque, string? descricao)
         {
             var estoques = new List<VMEstoque>();
-            var resultado = Select($@"SELECT 
-                            e.IdEstoque, e.Descricao,
-                            t.Descricao FROM Estoques e
+            var resultado = Select($@"SELECT e.IdEstoque, e.Descricao,
+                            t.Descricao, t.IdTipoEstoque FROM Estoques e
                             JOIN TiposEstoque t
                             ON e.IdTipoEstoque = t.IdTipoEstoque
                             WHERE 1=1
@@ -217,6 +219,7 @@ namespace Projeto_Mercado_API.Repositories
                     IdEstoque = resultado.GetInt32(0),
                     DescricaoEstoque = resultado.GetString(1),
                     DescricaoTipoEstoque = resultado.GetString(2),
+                    IdTipoEstoque = resultado.GetInt32(3)
                 };
                 estoques.Add(estoque);
             }

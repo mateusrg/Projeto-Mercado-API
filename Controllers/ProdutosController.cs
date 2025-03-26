@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Projeto_Mercado_API.Models;
+using Projeto_Mercado_API.Models.View_Models;
 using Projeto_Mercado_API.Repositories;
 
 namespace Projeto_Mercado_API.Controllers
@@ -12,13 +13,6 @@ namespace Projeto_Mercado_API.Controllers
         public ActionResult<List<Produto>> ListarTodos()
         {
             return Ok(ProdutosRepository.ListarTodos());
-        }
-
-        [HttpGet]
-        [Route("tudo/{texto}")]
-        public ActionResult<List<Produto>> ConsultarPorTudo(string texto)
-        {
-            return Ok(ProdutosRepository.ConsultarPorTudo(texto));
         }
 
         [HttpGet]
@@ -49,13 +43,6 @@ namespace Projeto_Mercado_API.Controllers
         }
 
         [HttpGet]
-        [Route("descricaoECodBarras/{texto}")]
-        public ActionResult<List<Produto>> ConsultarPorDescricaoECodBarras(string texto)
-        {
-            return Ok(ProdutosRepository.ConsultarPorDescricaoECodBarras(texto));
-        }
-
-        [HttpGet]
         [Route("quantPorEstoque/{idProduto}")]
         public ActionResult<List<Produto>> ListarQuantidadePorEstoque(int idProduto)
         {
@@ -67,6 +54,20 @@ namespace Projeto_Mercado_API.Controllers
         public ActionResult<List<Produto>> ListarMovimentacoesRecentes(int idProduto)
         {
             return Ok(ProdutosRepository.ListarMovimentacoesRecentes(idProduto));
+        }
+
+        [HttpPost]
+        [Route("tudo")]
+        public ActionResult<List<Produto>> ConsultarPorTudo(PesquisaPadrao pesquisa)
+        {
+            return Ok(ProdutosRepository.ConsultarPorTudo(pesquisa.Query));
+        }
+
+        [HttpPost]
+        [Route("descricaoECodBarras")]
+        public ActionResult<List<Produto>> ConsultarPorDescricaoECodBarras(PesquisaPadrao pesquisa)
+        {
+            return Ok(ProdutosRepository.ConsultarPorDescricaoECodBarras(pesquisa.Query));
         }
 
         [HttpPost]

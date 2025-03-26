@@ -22,7 +22,6 @@ namespace Projeto_Mercado_API.Controllers
             return Ok(MovimentacoesEstoqueRepository.ListarTodosView());
         }
 
-
         [HttpGet]
         [Route("id/{idMovimentacaoEstoque}")]
         public ActionResult<MovimentacaoEstoque?> ConsultarPorId(int idMovimentacaoEstoque)
@@ -88,6 +87,13 @@ namespace Projeto_Mercado_API.Controllers
         public ActionResult<List<MovimentacaoEstoque>> ConsultarPorData(string dataInicio, string dataFim)
         {
             return Ok(MovimentacoesEstoqueRepository.ConsultarPorData(dataInicio, dataFim));
+        }
+
+        [HttpPost]
+        [Route("filtrar")]
+        public ActionResult<List<MovimentacaoEstoque>> ListarTodosViewComFiltro(FiltroParaMovimentacaoEstoque filtroMovimentacaoEstoque)
+        {
+            return Ok(MovimentacoesEstoqueRepository.ListarTodosViewComFiltro(filtroMovimentacaoEstoque));
         }
 
         [HttpPost]

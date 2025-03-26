@@ -72,6 +72,58 @@ namespace Projeto_Mercado_API.Repositories
             return movimentacoesEstoque;
         }
 
+        public static List<VMMovimentacaoEstoque> ListarTodosViewComFiltro(FiltroParaMovimentacaoEstoque filtroMovimentacaoEstoque)
+        {
+            List<VMMovimentacaoEstoque> movimentacoesEstoque = [];
+            var resultado = Select($@"SELECT * FROM MovimentacoesEstoque ME
+                LEFT JOIN Estoques E ON ME.IdEstoque = E.IdEstoque
+                LEFT JOIN TiposEstoque TE ON E.IdTipoEstoque = TE.IdTipoEstoque
+                LEFT JOIN TiposMovimentacaoEstoque TME
+                ON ME.IdTipoMovimentacaoEstoque = TME.IdTipoMovimentacaoEstoque
+                LEFT JOIN Funcionarios F ON ME.idFuncionarioAutenticador = F.IdFuncionario
+                LEFT JOIN Funcionarios Fu ON ME.IdFuncionarioSolicitador = Fu.IdFuncionario
+                LEFT JOIN Produtos P ON ME.IdProduto = P.IdProduto
+                WHERE 1=1
+                {(filtroMovimentacaoEstoque.DataInicio == null ? "" : $"AND ME.DataHora >= '{filtroMovimentacaoEstoque.DataInicio}'")}
+                {(filtroMovimentacaoEstoque.DataFim == null ? "" : $"AND ME.DataHora <= '{filtroMovimentacaoEstoque.DataFim}'")}
+                {(filtroMovimentacaoEstoque.QuantidadeMinima == null ? "" : $"AND ME.Quantidade >= {filtroMovimentacaoEstoque.QuantidadeMinima}")}
+                {(filtroMovimentacaoEstoque.QuantidadeMaxima == null ? "" : $"AND ME.Quantidade <= {filtroMovimentacaoEstoque.QuantidadeMaxima}")}
+                {(filtroMovimentacaoEstoque.IdProduto == null ? "" : $"AND ME.IdProduto = {filtroMovimentacaoEstoque.IdProduto}")}
+                {(filtroMovimentacaoEstoque.IdEstoque == null ? "" : $"AND ME.IdEstoque = {filtroMovimentacaoEstoque.IdEstoque}")}
+                {(filtroMovimentacaoEstoque.IdTipoMovimentacaoEstoque == null ? "" : $"AND ME.IdTipoMovimentacaoEstoque = {filtroMovimentacaoEstoque.IdTipoMovimentacaoEstoque}")}
+                ORDER BY ME.IdMovimentacaoEstoque DESC");
+
+            while (resultado.Read())
+            {
+                var movimentacaoEstoque = new VMMovimentacaoEstoque()
+                {
+                    IdMovimentacaoEstoque = resultado.GetInt32(0),
+                    IdEstoque = resultado.GetInt32(1),
+                    DescricaoEstoque = resultado.GetString(10),
+                    IdTipoEstoque = resultado.GetInt32(9),
+                    DescricaoTipoEstoque = resultado.GetString(12),
+                    IdTipoMovimentacaoEstoque = resultado.GetInt32(13),
+                    DescricaoMovimentacaoEstoque = resultado.GetString(14),
+                    IdFuncionarioSolicitador = resultado.GetInt32(3),
+                    NomeFuncionarioSolicitador = resultado.GetString(21),
+                    SetorFuncionarioSolicitador = resultado.GetString(22),
+                    EmailFuncionarioSolicitador = resultado.GetString(23),
+                    IdFuncionarioAutenticador = resultado.GetInt32(4),
+                    NomeFuncionarioAutenticador = resultado.GetString(16),
+                    SetorFuncionarioAutenticador = resultado.GetString(17),
+                    EmailFuncionarioAutenticador = resultado.GetString(18),
+                    IdProduto = resultado.GetInt32(5),
+                    CodBarrasProduto = resultado.GetString(26),
+                    DescricaoProduto = resultado.GetString(27),
+                    Quantidade = resultado.GetInt32(6),
+                    DataHora = resultado.GetDateTime(7),
+                };
+                movimentacoesEstoque.Add(movimentacaoEstoque);
+            }
+            resultado.Close();
+            return movimentacoesEstoque;
+        }
+
         public static MovimentacaoEstoque? ConsultarPorId(int idMovimentacaoEstoque)
         {
             var resultado = Select($"SELECT * FROM MovimentacoesEstoque WHERE IdMovimentacaoEstoque = {idMovimentacaoEstoque}");

@@ -4,10 +4,14 @@
     {
         public string Produto { get; set; }
         public int Quantidade { get; set; }
+        public int IdProduto { get; set; }
+        public string CodBarras { get; set; }
 
         public VWQuantidadeProdutoEstoque()
         {
             Produto = "";
+            CodBarras = "";
+            IdProduto = 0;
             Quantidade = 0;
         }
     }

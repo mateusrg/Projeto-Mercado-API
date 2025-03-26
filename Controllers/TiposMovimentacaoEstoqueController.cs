@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Projeto_Mercado_API.Models;
+using Projeto_Mercado_API.Models.View_Models;
 using Projeto_Mercado_API.Repositories;
 
 namespace Projeto_Mercado_API.Controllers
@@ -25,17 +26,17 @@ namespace Projeto_Mercado_API.Controllers
         }
 
         [HttpGet]
-        [Route("descricao/{descricao}")]
-        public ActionResult<List<TipoMovimentacaoEstoque>> ConsultarPorDescricao(string descricao)
-        {
-            return Ok(TiposMovimentacaoEstoqueRepository.ConsultarPorDescricao(descricao));
-        }
-
-        [HttpGet]
         [Route("movimentacoes/{idTipoMovimentacaoEstoque}")]
         public ActionResult<List<TipoMovimentacaoEstoque>> ListarMovimentacoesPorTipo(int idTipoMovimentacaoEstoque)
         {
             return Ok(TiposMovimentacaoEstoqueRepository.ListarMovimentacoesPorTipo(idTipoMovimentacaoEstoque));
+        }
+
+        [HttpPost]
+        [Route("descricao")]
+        public ActionResult<List<TipoMovimentacaoEstoque>> ConsultarPorDescricao(PesquisaPadrao pesquisa)
+        {
+            return Ok(TiposMovimentacaoEstoqueRepository.ConsultarPorDescricao(pesquisa.Query));
         }
 
         [HttpPost]

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Projeto_Mercado_API.Models;
+using Projeto_Mercado_API.Models.View_Models;
 using Projeto_Mercado_API.Repositories;
 
 namespace Projeto_Mercado_API.Controllers
@@ -42,19 +43,18 @@ namespace Projeto_Mercado_API.Controllers
         }
 
         [HttpGet]
-        [Route("nomeECnpj/{texto}")]
-        public ActionResult<List<Fornecedor>> ConsultarPorNomeECNPJ(string texto)
-        {
-            return Ok(FornecedoresRepository.ConsultarPorNomeECNPJ(texto));
-        }
-
-        [HttpGet]
         [Route("listarComprasFornecedor/{idFornecedor}")]
         public ActionResult<List<Fornecedor>> ListarComprasDoFornecedor(int idFornecedor)
         {
             return Ok(FornecedoresRepository.ListarComprasDoFornecedor(idFornecedor));
         }
 
+        [HttpPost]
+        [Route("nomeECnpj")]
+        public ActionResult<List<Fornecedor>> ConsultarPorNomeECNPJ(PesquisaPadrao pesquisa)
+        {
+            return Ok(FornecedoresRepository.ConsultarPorNomeECNPJ(pesquisa.Query));
+        }
 
         [HttpPost]
         public ActionResult<int> Cadastrar(Fornecedor novoFornecedor)

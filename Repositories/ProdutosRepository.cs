@@ -28,12 +28,14 @@ namespace Projeto_Mercado_API.Repositories
             List<VMEstoqueQuantidadeProduto> quantidadeProdutosEstoque = [];
             var resultado = Select($@"
                 SELECT e.Descricao AS Estoque,
-                SUM(me.Quantidade) AS Quantidade
+                SUM(me.Quantidade) AS Quantidade,
+                e.IdEstoque, e.IdTipoEstoque, t.Descricao
                 FROM MovimentacoesEstoque me
                 LEFT JOIN Produtos p ON me.IdProduto = p.IdProduto
                 LEFT JOIN Estoques e ON e.IdEstoque = me.IdEstoque
-                WHERE me.IdProduto = {idProduto}
-                GROUP BY e.Descricao
+                LEFT JOIN TiposEstoque t ON e.IdTipoEstoque = t.IdTipoEstoque
+                WHERE me.IdProduto = 23
+                GROUP BY e.Descricao, e.IdEstoque, e.IdTipoEstoque, t.Descricao
             ");
 
             while (resultado.Read())
@@ -42,6 +44,9 @@ namespace Projeto_Mercado_API.Repositories
                 {
                     Estoque = resultado.GetString(0),
                     Quantidade = resultado.GetInt32(1),
+                    IdEstoque = resultado.GetInt32(2),
+                    IdTipoEstoque = resultado.GetInt32(3),
+                    TipoEstoque = resultado.GetString(4)
                 };
                 quantidadeProdutosEstoque.Add(quantidadeProdutoEstoque);
             }
@@ -176,7 +181,7 @@ namespace Projeto_Mercado_API.Repositories
             var resultado = Select($@"SELECT * 
                                     FROM Produtos 
                                     WHERE 
-                                    {(int.TryParse(texto, out _) ? "IdProduto = {texto} OR" : "")}
+                                    {(int.TryParse(texto, out _) ? $"IdProduto = {texto} OR" : "")}
                                     Descricao LIKE '%{texto}%' OR
                                     CodBarras LIKE '%{texto}%'");
             while (resultado.Read())

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Projeto_Mercado_API.Models;
+using Projeto_Mercado_API.Models.View_Models;
 using Projeto_Mercado_API.Repositories;
 
 namespace Projeto_Mercado_API.Controllers
@@ -53,11 +54,11 @@ namespace Projeto_Mercado_API.Controllers
             return Ok(FuncionariosRepository.ConsultarPorEmail(email));
         }
 
-        [HttpGet]
-        [Route("IdNomeSetorEmail/{texto}")]
-        public ActionResult<List<Funcionario>> ConsultarPorNomeEmailSetorId(string texto)
+        [HttpPost]
+        [Route("IdNomeSetorEmail")]
+        public ActionResult<List<Funcionario>> ConsultarPorNomeEmailSetorId(PesquisaPadrao pesquisa)
         {
-            return Ok(FuncionariosRepository.ConsultarPorNomeEmailSetorId(texto));
+            return Ok(FuncionariosRepository.ConsultarPorNomeEmailSetorId(pesquisa.Query));
         }
 
         [HttpPost]

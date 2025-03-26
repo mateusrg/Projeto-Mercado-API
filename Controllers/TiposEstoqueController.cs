@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Projeto_Mercado_API.Models;
+using Projeto_Mercado_API.Models.View_Models;
 using Projeto_Mercado_API.Repositories;
 
 namespace Projeto_Mercado_API.Controllers
@@ -24,11 +25,11 @@ namespace Projeto_Mercado_API.Controllers
             return Ok(tipoEstoque);
         }
 
-        [HttpGet]
-        [Route("descricao/{descricao}")]
-        public ActionResult<List<TipoEstoque>> ConsultarPorDescricao(string descricao)
+        [HttpPost]
+        [Route("descricao")]
+        public ActionResult<List<TipoEstoque>> ConsultarPorDescricao(PesquisaPadrao pesquisa)
         {
-            return Ok(TiposEstoqueRepository.ConsultarPorDescricao(descricao));
+            return Ok(TiposEstoqueRepository.ConsultarPorDescricao(pesquisa.Query));
         }
 
         [HttpPost]
