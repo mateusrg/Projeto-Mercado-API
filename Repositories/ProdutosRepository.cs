@@ -34,7 +34,7 @@ namespace Projeto_Mercado_API.Repositories
                 LEFT JOIN Produtos p ON me.IdProduto = p.IdProduto
                 LEFT JOIN Estoques e ON e.IdEstoque = me.IdEstoque
                 LEFT JOIN TiposEstoque t ON e.IdTipoEstoque = t.IdTipoEstoque
-                WHERE me.IdProduto = 23
+                WHERE me.IdProduto = {idProduto}
                 GROUP BY e.Descricao, e.IdEstoque, e.IdTipoEstoque, t.Descricao
             ");
 
