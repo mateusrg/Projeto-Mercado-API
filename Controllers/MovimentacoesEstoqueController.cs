@@ -98,7 +98,7 @@ namespace Projeto_Mercado_API.Controllers
 
         [HttpPost]
         [Route("venderProduto")]
-        public ActionResult<string> Vender(VMVenda vendaEstoque)
+        public ActionResult<string> Vender(VMVendaEDescarte vendaEstoque)
         {
             if (vendaEstoque.IdEstoque <= 0)
             {
@@ -111,6 +111,23 @@ namespace Projeto_Mercado_API.Controllers
                 return BadRequest($"Não há {vendaEstoque.Quantidade} unidades deste produto no estoque.");
             }
             return Ok("Venda realizada com sucesso.");
+        }
+
+        [HttpPost]
+        [Route("descartarProduto")]
+        public ActionResult<string> Descartar(VMVendaEDescarte descarte)
+        {
+            if (descarte.IdEstoque <= 0)
+            {
+                return BadRequest("O ID do estoque deve ser maior do que 0.");
+            }
+
+            var retorno = MovimentacoesEstoqueRepository.Descartar(descarte);
+            if (retorno == 0)
+            {
+                return BadRequest($"Não há {descarte.Quantidade} unidades deste produto no estoque.");
+            }
+            return Ok("Descarte realizado com sucesso.");
         }
 
         [HttpPost]

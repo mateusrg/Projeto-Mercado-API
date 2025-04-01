@@ -333,7 +333,7 @@ namespace Projeto_Mercado_API.Repositories
             return 1;
         }
 
-        public static int Vender(VMVenda novaMovimentacaoEstoque)
+        public static int Vender(VMVendaEDescarte novaMovimentacaoEstoque)
         {
             var resultado = Select($@"
                 SELECT M.Quantidade FROM MovimentacoesEstoque M WHERE M.IdProduto = ${novaMovimentacaoEstoque.IdProduto} AND M.IdEstoque = ${novaMovimentacaoEstoque.IdEstoque};
@@ -360,6 +360,39 @@ namespace Projeto_Mercado_API.Repositories
                 DataHora = novaMovimentacaoEstoque.DataHora,
                 IdEstoque = novaMovimentacaoEstoque.IdEstoque,
                 IdTipoMovimentacaoEstoque = 8
+            };
+            Cadastrar(movimentacao);
+
+            return 1;
+        }
+        
+        public static int Descartar(VMVendaEDescarte descarte)
+        {
+            var resultado = Select($@"
+                SELECT M.Quantidade FROM MovimentacoesEstoque M WHERE M.IdProduto = ${descarte.IdProduto} AND M.IdEstoque = ${descarte.IdEstoque};
+            ");
+
+            int quantidadeEmEstoque = 0;
+            while (resultado.Read())
+            {
+                quantidadeEmEstoque += resultado.GetInt32(0);
+            }
+            resultado.Close();
+
+            if (quantidadeEmEstoque < descarte.Quantidade)
+            {
+                return 0;
+            }
+
+            var movimentacao = new MovimentacaoEstoque()
+            {
+                IdFuncionarioSolicitador = descarte.IdFuncionarioSolicitador,
+                IdFuncionarioAutenticador = descarte.IdFuncionarioAutenticador,
+                IdProduto = descarte.IdProduto,
+                Quantidade = Math.Abs(descarte.Quantidade) * -1,
+                DataHora = descarte.DataHora,
+                IdEstoque = descarte.IdEstoque,
+                IdTipoMovimentacaoEstoque = 9
             };
             Cadastrar(movimentacao);
 

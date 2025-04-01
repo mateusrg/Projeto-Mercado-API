@@ -1,6 +1,6 @@
 ﻿namespace Projeto_Mercado_API.Models.View_Models
 {
-    public class VMVenda
+    public class VMVendaEDescarte
     {
         public int IdFuncionarioSolicitador { get; set; }
         public int IdFuncionarioAutenticador { get; set; }
